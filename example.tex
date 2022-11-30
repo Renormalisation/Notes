@@ -1,0 +1,403 @@
+\documentclass{report}
+\usepackage{amsfonts}
+\usepackage{graphics}
+\usepackage{amssymb}
+
+\author{Jay Rashamiya}
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+  \line(1,0){300}\\
+  \huge{\bfseries Tricks and Techniques}\\
+  \line(1,0){300}\\
+  \textsc{\LARGE Jay Rashamiya}\\
+  \vspace{5cm}
+  \end{center}
+
+  \noindent \textsc{\large I knew a lot of things. Over time, I forgot many things. Now, I only know a few things. Therefore I took the wise decision of noting stuff down. To start, I try to summarize the most elementary things I knew, and the hope is that I'll keep on adding new things that I learn. For now, it's almost all the undergrad stuff which I am trying to summarize as quickly as possible.}
+\end{titlepage}
+
+\chapter{Magic of Infinitesimals}
+\section{Continuity}
+\subsection{Any mid value}
+\textbf{Statement:} If function $f(x)$ is continuous in the interval $[a,b]$ with $f(a) = A$ and $f(b) = B$, then every value in the interval $[A,B]$ is achieved. Namely, $\forall N \in [A,B], \exists \xi \in [a,b]$ such that $f(\xi) = N$ \\
+
+\noindent\textbf{Proof:} Not required.
+
+\subsection{Max and Min value}
+\textbf{Statement:} If the function is continuous in a closed interval than it has a largest and a smallest value for atleast one $x$ in that interval. (Other way of saying that it doesn't become infinite). \\
+
+\noindent\textbf{Use:} In rolle's theorem, for the existence of highest value.
+
+\section{Differentiability}
+\subsection{Rolle's Theorem}
+\textbf{Statement :} If the function is differentiable in the interval $[a,b]$ and $f(a) = f(b)$, $\exists$ $\xi$ $\in$ $(a,b)$ such that $f'(\xi) = 0$. \\
+
+\noindent\textbf{Proof :} Use sign change/existence argument at maximum.\\
+
+\noindent\textbf{Use :} Finding remainder term in taylor series. Proving L'Hopital rule and various other places where we construct a new function on which we can apply Rolle to prove certain thing about a given function.\\
+
+\subsection{Mean Value theorem}
+\textbf{Statemnt :} For a differentiable function in a given interval $[a,b]$, $\exists$ $\xi$ $\in$ $(a,b)$ such that $f'(\xi) = \frac{f(b)-f(a)}{b-a}$ \\
+
+\noindent\textbf{Proof :} Using rolle's theorem.\\
+
+\noindent\textbf{Use :} $f(b) = f(a) + (b-a) f'(a+\theta (b-a))$, $\theta \in [0,1]$.
+
+\subsection{Taylor series}
+A function which can be differentiated arbitary number of times can always be expanded as \\\
+$$f(b) = f(a) + (b-a)f'(a) + \frac{(b-a)^2}{2!}f''(a) + \dots + \frac{(b-a)^n}{n!}f^{(n)}(a) + R_n$$
+The remainder term can be beautifully calculated using rolle's theorem as 
+
+$$R_n = \frac{(b-a)^{n+1}}{(n+1)!} f^{(n+1)}(\xi)$$
+
+\noindent Clearly, this tends to zero as n tends to infinity if the derivative is bounded (which is, because we assumed it exists). A clever trick for finding out taylor series for indefinite integrals is to find the taylor series of integrand and integrate them.
+
+\section{Infinitesimals}
+Summing up (infinite times), or dividing is same as summing up (infinite times) or divding only the principal part.\\
+
+\noindent Three properties are important for geometric visualization of calculus:\\
+
+\noindent \textbf{Property 1 :} Any general arc differes from its chord by an infinitestimal of a higher order. Using this, we can imainge arcs as chords (and same extension in higher dimensions, curved surface as planes). We can find the curve length by ignorigng this higher order infinitesimal differnce between arc and chord because infinite sum of infinitesimals is same as infinite sum of their principal parts.\\
+
+\noindent \textbf{Property 2 :} Perpendicular distance from one end of the infintestimal arc to the tangent at the other end  is an infitesimal of higher order than arc, however the length of the tangent from the foot of prependicular to the point of tangency is of the same order. You can prove this by using maclaurine series in transformed coordinates or by simple geometric construction.\\
+
+\noindent \textbf{Property 3 :} Same trigonometric laws are obeyed. This is because the chord becomes tangent to the arc as their length approaches zero. The rules of chord extend to the arcs.
+
+\section{Differentials}
+
+Note that for an independent variable $d^2x = 0$, not otherwise. For independent variable $x$, differential $dx$ is same as infinitesimal increment $\Delta x$ to x. For dependent variable $y$, the differential $dy$ is the principal part of the infinitesimal change $\Delta y$ in $y$. The rules for differentials can easily be derived.
+
+$$\lim_{\Delta x\to 0} \frac{\Delta y}{\Delta x} = f'(x)$$
+$$\Delta y = f'(x)\Delta x + \epsilon\Delta x$$
+$$dy = f'(x)dx$$
+
+\noindent Knowing usual rules for differnetials, we can use them as algebraic quantities, no need to think of differential operators.\\
+
+\noindent Note the difference between the context of the symbol $\frac{d^2 y}{dx^2}$. Which has context independent meaning only when x is independent variable.
+
+\chapter{Sequences}
+I list all the theorems which you can prove in order and digest.\\
+
+\noindent\textbf{Defn :} A sequence $(x_n)$ is said to convere to $x$ if $\forall \epsilon > 0$, $\exists N\in \mathbb{N}$ such that $|x_n - x| < \epsilon, \forall n > N.$ \\
+
+\noindent \textbf{Theorem 1 :} If sequence $(x_n)$ converges, it has a unique limit point.\\
+
+\noindent \textbf{Thorem 2 :} If sequence $(x_n)$ converges, it is bounded. (Bounded : $\exists M \in \mathbb{R}$ such that $\forall n,  |x_n| < M$).\\
+
+\noindent \textbf{Theorem 3 :} If a \textbf{monotone} sequence $(x_n)$ is bounded, then it converges. The limit is $sup\{x_n : n \in \mathbb{N}\}$ \\
+
+\noindent \textbf{Theorem 4 :} Every subsequence of a convergent sequence converges to the limit of sequence.\\
+
+\noindent \textbf{Theorem 5 :} Every sequence has a monotone subsequence.\\
+
+\noindent \textbf{Theorem 6 :} (Bolzano) Every bounded sequence has a convergent subsequence. (Just a consequence of prev theorem)\\
+
+\noindent \textbf{Defn :} Limsup/ Liminf of sequence $(a_n)$ are defined by 
+
+$$\limsup_{n\to\infty} a_n = \lim_{n\to\infty}sup(\{a_k : k>=n\})$$ 
+$$\liminf_{n\to\infty} a_n = \lim_{n\to\infty}inf(\{a_k : k>=n\})$$ \\
+
+\noindent \textbf{Thoerem 7 :} limsup/liminf of a bounded sequence always exists.\\
+
+\noindent \textbf{Theorem 7 :} Let $(x_n)$ be a bounded sequence. Then $\exists$ subsequences $(x_{n_k})$ and $(x_{m_k})$ s.t.
+$$\lim_{n\to\infty}x_{n_k} = \limsup x_n$$
+$$\lim_{n\to\infty}x_{n_k} = \liminf x_n$$
+
+
+
+\noindent \textbf{Theorem 8 :} If every convergent subsequence of $(x_n)$ has the same limit $x$, then $(x_n)$ converges to $x$.\\
+
+\noindent \textbf{Cauchy Sequence :} A sequence $(x_n)$ is cauchy sequence, if $\forall \epsilon > 0, \exists N \in \mathbb{N}$ such that $|x_n - x_m| < \epsilon , \forall m,n> N$\\
+
+\noindent \textbf{Theorem 9 :} \textbf{A sequence $(x_n)$ converges iff it's a Cauchy sequence.}\\
+
+
+
+
+\chapter{Series}
+Same presentation as chapter 2.\\
+
+\noindent \textbf{Defn : }If $(a_n)$ is a a sequence of real numbers then the series $\sum_{n=1}^{\infty}a_n$  converges to $S \in \mathbb{R}$ if the seuqnece $(S_n)$ of partial sum converges to $S$.\\
+
+\noindent \textbf{Trick : } For geometric and telescopic series, you can find explicit formula for $n^{th}$ term of the sequence $(s_n)$.\\
+
+\noindent \textbf{Theorem 1 :} A series $\Sigma a_n$ of positive term converges iff its partial sums are bounded.\\
+
+\noindent \textbf{Theorem 2 :} (Cauchy Condition) The series $\Sigma a_n$ converges iff $\forall \epsilon > 0, \exists N \in \mathbb{N}$ such that $|S_n - S_m| < \epsilon, \forall n > m > N$\\
+
+\noindent \textbf{Defn :} Series $\Sigma a_n$ converges absolutely if $\Sigma |a_n|$ converges. It converges conditionally if $\Sigma a_n$ converges but $\Sigma |a_n|$ diverges.\\
+
+\noindent \textbf{Theorem 4 :} Absolutely convergent series $\Sigma a_n$ converges. Moreover, $\Sigma a_n$ converges absolutely, iff series $\Sigma a_n^{+}$ and $\Sigma a_n^{-}$ converges.\\
+
+Follwoing tests can all be proved simply, using cauchy criterion.\\
+
+\noindent \textbf{Test for divergence :}  If series $\Sigma a_n$ converges, then $\lim_{n\to\infty} a_n = 0$ \\
+
+\noindent \textbf{Comparision test :} If $b_n\ge0, \Sigma b_n$ converges, then $\Sigma a_n$ converges absolutely if $|a_n| \le b_n$\\
+
+\noindent \textbf{Ratio test :} If $(a_n)$ is a sequence of nonzero real numbers, let 
+$$ r = \lim_{n\to\infty}\Bigl|\frac{a_{n+1}}{a_n}\Bigr|$$
+\noindent Series $\Sigma a_n$ converges absolutely if $0\le r<1$, diverges if $1<r\le \infty$\\
+
+\noindent \textbf{Root test :} For $(a_n)$
+$$ r = \lim_{n\to\infty} sup|a_n|^{\frac{1}{n}}$$
+\noindent The series converges absolutely if $0\le r<1$ and diverges if $1<r<\infty$.\\
+
+\noindent\textbf{Alternating series test :} If $(a_n)$ is a decreasing sequence of nonnegative real numbers, such that $lim_{n\to\infty}a_n=0$, then the alternating series $\Sigma (-1)^{n+1}a_n$ converges.\\
+
+\noindent\textbf{Limit Comparisiont test :} If $\Sigma a_n$ and $\Sigma b_n$ are two seires and 
+
+$$ r:= \lim_{n\to\infty}\big(a_n/b_n\big) $$
+
+\noindent If $r=0$ : If $\Sigma b_n$ converges, then $\Sigma a_n$ converges.\\
+\noindent If $r=\infty$ : If $\Sigma b_n$ diverges, then $\Sigma a_n$ diverges.\\
+\noindent IF $r$ is finite, either both converge or both diverge.\\
+
+\noindent\textbf{Theorem 4 :} Every rearrangement of an absolutely convergent series converges to the same sum.\\
+
+\subsection{Power series :}
+
+There's only one power series for a given funcion (Coefficients are obviously uniquely defined by differentiation).
+
+\begin{itemize}
+
+\item If a power series converges for some $x=x_1$, it converges absolutely and uniformly for all $|x_2| < |x_1|$. This can be proven using comparision test.\\
+
+Follwowing are the conseqences of uniform convergence :
+
+\begin{enumerate}
+\item The function defined by power series is continuous inside the region of convergence. 
+
+\item The power series can be integrated term by term in the region of convergence.
+
+\item The power series can be differentiated term by term.
+
+\end{enumerate}
+
+\item On the boundary of region of convergence, there is atleast one singularity.
+
+\item Laurent Series and Analytic function.
+
+\item Using residue calculus to sum the series.
+
+\end{itemize}
+
+\chapter{Integration}
+
+\begin{itemize}
+
+\item Any upper sum will be greater than any lower sum. Infinite integrals (in integrands and in limits) are defined by taking appropriate limits. If function is discontinuous at only finitely many points, both limits approach to the same value, which is defined as the integral
+
+\item Differentiating under the integral sign. Uniform convergence in $\alpha$ is required for infinite limits.
+
+\item Integrating under the integral sign is rarely appreciated. Nice trick.
+
+\item A nice understanding of how lengths change under change of coordinates. The jacobian can easily be derived by parellelopiped volume formula.
+
+\item Green's and Stokes theorem (easy proof).
+
+\end{itemize}
+
+\chapter{Complex Variables}
+
+\begin{itemize}
+
+\item Cauchy reimann conditions for analyticity are sufficient when first order derivatives are also continuous. Analyticity is defined as differentiability in a region. 
+
+\item As an example $|z|^2$ is differentiable at $z=0$ but not analytic anywhere.
+
+\item The corresponding real functions of analytic function are harmonic and the conjugate functions form an orthogonal family. Moving along one would give maximum change in the other. The mapping is conformal at point when $f'(z) \neq 0$ or $f'(z) \neq \infty$.
+
+\item Power series expansion for analytic function around some point upto the singularity and residue calculus using poles!
+
+\end{itemize}
+
+\chapter{Differential Equations}
+
+I won't even mention ODE's with constant coefficients.
+\section{First Order ODE}
+
+\begin{itemize}
+\item One can always find integrating factor for first order ODE in principle. In practice, we only know direct formula for \textbf{linear} first order ODE. This also means that every constraint in (two dimensions) is holonomic.
+
+\item List of famous non-linear first order equations that can be solved
+\begin{enumerate}
+\item Bernoulli equation
+  $$\frac{dy}{dx} + P(x)y = Q(x)y^n$$
+\item Clairaut's equation
+  $$y = x\frac{dy}{dx} + f\left(\frac{dy}{dx}\right)$$
+\item D'Alembert's equation
+  $$y = xf\left(\frac{dy}{dx}\right) + g\left(\frac{dy}{dx}\right)$$
+\end{enumerate}
+
+\end{itemize}
+
+\section{Second Order Linear ODE}
+Let's consider only the homogenous part right now.
+  $$y'' + P(x)y' + Q(x) = 0$$
+
+\noindent \textbf{Ordinary Point :} $x_0$ for which $P(x_0)$ and $Q(x_0)$ are finite.\\
+
+\noindent \textbf{Regular Singular Point :} Singular $x_0$ for which $(x-x_0)P(x)$ and $(x-x_0)^2 Q(x)$ remain finite.\\
+
+\noindent \textbf{Irregular Singular Point :} Singular $x_0$ for which one of $(x-x_0)P(x)$ or $(x-x_0)^2 Q(x)$ diverge.\\
+
+\begin{itemize}
+  \item The only trick we know is Frobenius! Always check if the final solution converges. You have to expand about a clever point. Expanding about essential singularity won't work.\\
+
+  \item Expressing ODE as $L(x)y(x) = 0$. If $L(x) = L(-x)$, then if $y(x)$ is a solution, so is $y(-x)$. So you can express general solution as a linear combination of odd and even.
+\end{itemize}
+
+\noindent \textbf{Wronskian :} To test for linear independence of functions, we obtain $n$ equations by differentiating the relation 
+
+$$\sum_{i=0}^{n}a_i \phi_i (x) = 0$$
+
+\noindent This is the origin of Wronskian! Also used in some ninja-technical way to find particular solution for inhomogenous linear equation.
+
+\subsection{Sturm-Liouville Theory}
+
+In physics, we don't really require general solutions. We require solutions with specific boundary conditions. Specific boundary conditions impose conditions on the parameters of the equation. For instance, for a string clamped at $x=0$ and $x=l$, in the differential equation $\frac{d^2\psi}{dx^2} + k^2\psi(x) = 0$ , $k$ will have certain restrictions as you know. Here, $k^2$ is the eigenvalue.\\
+
+\noindent Charecterization of general features of eigenproblems arising \textbf{from linear second-order differential equations} is known as Strum-Liouville theory.\\
+
+\noindent Consider $\mathcal{L}\psi(x) = \lambda\psi(x)$, where
+
+$$\mathcal{L}(x) = p_0(x)\frac{d^2 \psi}{dx^2} + p_1(x)\frac{d\psi}{dx} + p_2(x)$$
+
+\noindent Now $\mathcal{L}$ is known as self adjoint if $p_0'(x) = p_1(x)$, which enables us to write 
+
+$$\mathcal{L}(x) = \frac{d}{dx}\left[p_0(x)\frac{d}{dx}\right]+p_2(x)$$
+
+\noindent We can show that
+
+$$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a}^{b} + \int_{a}^{b}(\mathcal{L}v)^* u dx$$
+
+\begin{itemize}
+  \item Dirichlet Boundary : $u$ and $v$ both vanish at endpoints.
+  \item Neumann Boundary : $u'$ and $v'$ both vanish at endpoints.
+  \item Any second order linear operator can be turned into Sturm-Liouville form by changing the scalar product to include weight factor.
+\end{itemize}
+  
+\noindent If $u$ and $v$ are eigenfunctions of $\mathcal{L}$ with respective eigenvalues $\lambda_u$ and $\lambda_v$, then we can see that they are orthogonal. \textbf{This is great beacause we have just proven orthogonality of Trigonometric, Bessel, Legendre, Hermite, Laguerre, Chebyshev}.
+
+\chapter{Asymptotics and Perturbation Methods}
+
+$\lim_{x\to x_0} \frac{f(x)}{g(x)} = 1 := f(x) \sim g(x) \quad\mathrm{as}\quad  x\to x_0$\\
+
+\noindent$\lim_{x\to x_0} \frac{f(x)}{g(x)} = 0 := f(x) << g(x)\quad\mathrm{as}\quad  x\to x_0$\\
+
+
+\noindent Given an asymptotic sequence(each successive term having lower order) $\{\phi_i\}$ The coefficients of the assymptotic expansion 
+
+$$ f(x) \sim a_1\phi_1(x) + a_2\phi_2(x) + ... $$
+
+\noindent are uniquely determined.\\
+
+\noindent If the remainder term is of lower order than the last term of the expansion for all $n$, the exapnsion is called asymptotic.\\
+
+\noindent $\bold{Caution 1:}$ Two given functions differing by transcendentally small terms (exponentials as compared to powers) can have same asymptotic expansions. Hence, these terms are ignored in asymptotic expnsions (in powers of $x$). TST are related to essential singularities.\\
+
+\noindent $\bold {Caution 2:}$ Need to keep higher order terms in exponentials (including sin,cos,sinh,cosh etc). Not doing so, can give wrong prefactor.\\
+
+\noindent $\bold{Caution 3:}$ Differentiating can cause trouble too. Look at "Tauberian Theorems" (BO - p.127)
+
+\section{For Integrals}
+
+\subsection{Integration by Parts}
+
+\noindent In general, if we have
+
+$$I(x) = \int_{a}^{b} f(t) e^{x\phi(t)} dt \quad\mathrm{as}\quad x\to\infty$$ 
+
+$$I(x) = \int_{a}^{b} \frac{f(t)}{x\phi'(t)} d(e^{x\phi(t)})$$
+
+$$I(x) = \frac{1}{x} \left[\frac{f(t)}{\phi(t)} e^{x\phi'(t)}\right]_{t=a}^{t=b} - \frac{1}{x}\int_{a}^{b}\frac {d}{dt}\left[\frac{f}{\phi'}\right]e^{x\phi(t)}dt $$
+
+We hope that the second integral has lower order than the first term and that $\phi'(t)$ is not zero anywhere in the interval. This will fail when asymptotic expansion involves $log$ or fractional powers of $x$.
+
+\subsection{Laplace's Method}
+
+For "sharply-peaked" integrands, where the dominant contribution comes from the nbd of a single point, we can expand the function involved in exponent around that point.\\
+
+\noindent $\bold{Example 1 :}$
+
+$$ I(x) = \int_{-10}^{10}e^{-xt^2}dt \quad\mathrm{as}\quad x\to\infty$$
+
+\noindent Integration by parts won't work because $\phi'(0) = 0$. Dominant contribution comes for $t=0$. 
+
+$$I(x) = \int_{-\infty}^{\infty}e^{-xt^2}dt - 2\int_{10}^{\infty}e^{-xt^2}dt$$
+
+\noindent First part is simple gaussian integral, we can estimate the second integral by replacing $t^2$ bt $10t$. Which will show that the second term is transcendentally smaller than the first term.
+
+$$I(x) \sim \sqrt{\frac{\pi}{x}}$$
+
+\noindent $\bold{Stirling's Approximation :}$
+
+$$\Gamma(x+1) = \int_{0}^{\infty}t^x e^{-t}dt$$
+
+\noindent Where's the peak of this integrand ? 
+
+$$ \Gamma(x+1) = \int_{0}^{\infty}e^{x\log(t)-t}dt$$
+
+\noindent Maximum occurs when the exponent is maximized, which gives $x = t$. Maximum moves with $x$. We change coordinates where it doesn't change. Define $ s = \frac{t}{x}$
+
+$$\Gamma(x+1) = x^{x+1}\int_{0}^{\infty}e^{x\log(s) - s}ds$$
+
+\noindent Expanding $\log$ about $s=1$.
+
+$$\Gamma(x+1) \sim x^{x+1}\int_{0}^{\infty}e^{-x\left(1+\frac{(1-s)^2}{2}\right)}ds$$
+
+$$\Gamma(x+1) \sim x^{x+1}e^{-x}\int_{0}^{\infty}e^{-x\frac{(1-s)^2}{2}}ds$$
+
+\noindent We can't do this integral. But if we add TST, we have usual gaussian integral!
+
+$$\Gamma(x+1) \sim x^{x+1}e^{-x} \sqrt{\frac{2\pi}{x}}$$
+
+\subsection{Stationary Phase}
+
+For an integral of the function $f(t)$ multiplied with an oscillating function, we get cancellations. If the frequency of oscillation is sufficiently big, we expect the integral to vanish. Rigorously speaking :
+
+$$I(x) = \int_{a}^{b}f(t)e^{ix\psi(t)}dt$$
+
+\noindent As $x\to\infty$, we try integration by parts to get
+
+
+$$I(x) = \left[\frac{f(t)e^{ix\psi(t)}}{ix\psi'(t)}\right]_{t=a}^{t=b} - \frac{1}{ix}\int_{a}^{b}\frac{d}{dt}\left[\frac{f}{\psi'}\right]e^{ix\psi(t)}$$
+
+\noindent Again, just hoping for usual conditions on $\psi'(t)$ and the second integral being of lower order, we see that 
+
+$$I(x) \sim O\left(\frac{1}{x}\right)$$
+
+\noindent At points when $\psi'(t) = 0$, the first order oscillation of $\psi$ vanishes, meaning it oscillates much more slowely (in second order of $t$) near this point. It gives a contribution of higher order than $O(\frac{1}{x})$. Therefore, we only integrate near neighbourhood of that point of stationary phase. After expanding around that point, a standard trick would be then to extend this region to infinity, if corresponding integral is easy to do. Since this extension would contribute to higher order terms only.
+
+\noindent Expanding around the stationary phase ($\psi'(c) =0 $), and using Fresnel's integral(really just use Gamma function formula), we can show that if 
+
+$$\mathrm{if}\quad f^{(i)}(c) = 0 \quad\forall i<n \quad \mathrm{then} \quad  I(x) \sim O\left(\frac{1}{x^{\frac{1}{n}}}\right)$$
+
+\noindent A useful way to think about both the laplace and stationary phase method in a coherent manner is to see that the function multiplying $f(t)$ has an exponential order. Meaning they change much faster than $f(t)$ as long as $f(t)$ doesn't have exponential order. Note that complex representation of sin and cosine make this evident for this oscillatory functions as well. In some sense then, the integral is wholly dominated by this exponential ordered terms (including sine,cosine). Therefore we only care about the regions where this exponential ordered terms are slowly varying (given that they decay eventually in case of laplace method). In laplace method, it was the peak. In stationary phase method, it is the stationary phase. The reason we only care about regions where the exponential term is slowly varying can easily be digested by seeing how well the integral $\int_{0}^{\infty}e^{-x}dx$ is approximated by $\int_{0}^{a}e^{-x}dx$. First order change in $a$ would give exponentially better approximation. In this case, $0$ was the point of slower change.\\
+
+\noindent \textbf{Bessel function}\\
+
+$$J_0(x) = \frac{1}{\pi}\int_{0}^{\infty}\cos(x\sin(t)) dt$$
+
+\noindent $\psi'(t) = 0$ at $t=\frac{\pi}{2}$. Expanding $\sin(t)$ about $t=\frac{pi}{2}$
+
+$$\sin\left(t\right) = \sin\left(\frac{\pi}{2}\right) + \cos\left(\frac{\pi}{2}\right)\left(t-\frac{\pi}{2}\right) -\frac{1}{2}\sin\left(\frac{\pi}{2}\right)\left(t-\frac{\pi}{2}\right)^2 + ...$$
+
+$$\mathrm{As}\quad x\to\infty\quad \frac{1}{\pi}\int_{0}^{\pi}e^{ix\sin(t)}dt$$
+$$\sim \frac{1}{\pi}\int_{\frac{\pi}{2}-\epsilon}^{\frac{\pi}{2}+\epsilon}e^{ix\left[1-\frac{1}{2}\left(t-\frac{\pi}{2}\right)^2 +...\right]}$$
+
+\noindent As done again and again, expanding the limits of integration because if only affects higher order terms, we get 
+
+$$J_0\left(x\right) \sim \sqrt{\frac{2}{\pi x}} \cos\left(x-\frac{\pi}{4}\right) \quad\mathrm{as}\quad x\to\infty$$
+
+\subsection{Steepest Descent}
+This method makes previous two methods a consequence. Consider the integral 
+
+$$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
+
+\noindent If we choose a contour such that the $\psi(t)$ is constant on this contour, we can bring it out of the integral and use laplace's method. This will enable us to find higher order terms that we missed in stationary phase method. Please check the video by Professor Strogatz for example.\\
+
+\end{document}
