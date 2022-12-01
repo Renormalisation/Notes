@@ -1,6 +1,7 @@
 \documentclass{report}
 \usepackage{amsfonts}
-\usepackage{graphics}
+\usepackage{graphicx}
+\graphicspath{./Images/}
 \usepackage{amssymb}
 \usepackage{physics}
 
@@ -211,7 +212,24 @@ Follwowing are the conseqences of uniform convergence :
 
 \item The corresponding real functions of analytic function are harmonic and the conjugate functions form an orthogonal family. Moving along one would give maximum change in the other. The mapping is conformal at point when $f'(z) \neq 0$ or $f'(z) \neq \infty$.
 
-\item Power series expansion for analytic function around some point upto the singularity and residue calculus using poles!
+\section{Cauchy's Theorem and Integral Formula:} If $f(z)$ is analytic in a simply connected region and $C$ is a closed contour in that region then
+
+$$\oint_{C}f(z)dz = 0$$
+
+$$\frac{1}{2\pi i}\oint_{C}\frac{f(z)}{z-z_0}dz = f(z_0)$$
+
+\begin{enumerate}
+  \item Taylor and laurent series are simple consequence of this.
+  \item Residue is very important for performing various integrals and summing series(as that is the only term that will remain after integration). 
+  \item Apart from poles and essential singularity, branch points are also a type of singularity.
+  \item for $z^\frac{1}{2}$, the branch point is at $z=0$, order is defined as the number of paths around that point to return to same value. In this case it's $2$.
+
+
+
+\section{Analytic Continuation}
+In real analysis, a function defined on a given range can be smoothly extended to outer regions in many ways. There's only a unique way to do so for analytic functions. This great property makes complex analysis almost GODLY.
+
+If two analytic functions coincide in any region, or on any finite line segment, they are the same function.
 
 \end{itemize}
 
@@ -288,9 +306,34 @@ $$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a
 \subsection{Variational Method}
 Suppose that the spectrum of the hamiltonian $H$ has a finite greatest lower bound. In such cases, we have a simple yet very powerful method to guess the ground state energy and wavefunction.
 
+
 $$\expval{H}{\Psi} \ge E_0$$
 
 \noindent This allows us to guess a paramaterized wavefunction and choose the parameter which minimizes the expectation value. The result can only get better because the ground state has lowest energy among all such $\psi$
+
+\section{Partial Differential Equations}
+Second order (mostly linear, but even non-linear) partial differential equations are everywhere. It's all of physics. 
+
+\subsection{Charecteristic}
+Understanding boundary conditions is important. Consider for example a simple first order PDE
+
+$$\mathcal{L}\phi = a\frac{\partial\phi}{\partial x} + b\frac{\partial\phi}{\partial y} = 0$$
+
+\noindent We generally try to change variables in such a manner that the equation reduces to something which only contains derivative w.r.t one term. Here $s = ax+br, t= bx-ay$ does the job. Reducing it to 
+
+$$\frac{\partial\phi}{\partial s} = 0 \quad \phi(x,y) = f(bx-ay)$$
+
+\noindent Observe that the solution is constant along constant $t$. It is known as the charecterisic curve. It's not necessary that solution remains constant on charecteristic cuve, but it can be solved using ODE methods on the charecteristic curve. If $\phi(x,y)$ is specified on a curve segment, one can deduce its value on all the charecteristics that intersects it.
+
+$$\phi(x,y) = \phi(x_0,y_0) + \frac{\partial \phi(x_0,y_0)}{\partial x}(x-x_0) + \frac{\partial\phi(x_0,y_0)}{\partial y}(y-y_0) + ...$$
+
+\noindent We can obtain the values of partial derivatives using the equations determining the curve and the given partial differential equation (Arfken p.405).\\
+
+\noindent If the boundary curve is along a charecteristic, then there may be inconsistencies. IF the boundary intersects same charecteristic on more than one point, then it may lead to inconsistencies as well.\\
+
+\noindent Exact general analysis of boundary conditions is complicated. Look up when you need it. For reference of three simple yet important PDE's\\
+
+\includegraphics[width=10cm, height=7cm]{./Images/boundary.png}
 
 \chapter{Asymptotics and Perturbation Methods}
 
