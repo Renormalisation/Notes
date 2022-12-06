@@ -4,6 +4,7 @@
 \graphicspath{./Images/}
 \usepackage{amssymb}
 \usepackage{physics}
+\usepackage{tensor}
 
 \author{Jay Rashamiya}
 \begin{document}
@@ -77,7 +78,9 @@ $$dy = f'(x)dx$$
 
 \noindent Knowing usual rules for differnetials, we can use them as algebraic quantities, no need to think of differential operators.\\
 
-\noindent Note the difference between the context of the symbol $\frac{d^2 y}{dx^2}$. Which has context independent meaning only when x is independent variable.
+\noindent Note the difference between the context of the symbol $\frac{d^2 y}{dx^2}$. Which has context independent meaning only when x is independent variable.\\
+
+\textbf{Implicit Function Theorem :} If $F(x,y)=0$ and $|F_x| < \infty$ with $F_y\neq 0$, then $y(x)$ exists and is differentiable. Can be easily extended to higher dimensions and/or involving more than one function using jacobians.
 
 \chapter{Sequences}
 I list all the theorems which you can prove in order and digest.\\
@@ -212,6 +215,8 @@ Follwowing are the conseqences of uniform convergence :
 
 \item The corresponding real functions of analytic function are harmonic and the conjugate functions form an orthogonal family. Moving along one would give maximum change in the other. The mapping is conformal at point when $f'(z) \neq 0$ or $f'(z) \neq \infty$.
 
+\end{itemize}
+
 \section{Cauchy's Theorem and Integral Formula:} If $f(z)$ is analytic in a simply connected region and $C$ is a closed contour in that region then
 
 $$\oint_{C}f(z)dz = 0$$
@@ -223,15 +228,14 @@ $$\frac{1}{2\pi i}\oint_{C}\frac{f(z)}{z-z_0}dz = f(z_0)$$
   \item Residue is very important for performing various integrals and summing series(as that is the only term that will remain after integration). 
   \item Apart from poles and essential singularity, branch points are also a type of singularity.
   \item for $z^\frac{1}{2}$, the branch point is at $z=0$, order is defined as the number of paths around that point to return to same value. In this case it's $2$.
-
+\end{enumerate}
 
 
 \section{Analytic Continuation}
-In real analysis, a function defined on a given range can be smoothly extended to outer regions in many ways. There's only a unique way to do so for analytic functions. This great property makes complex analysis almost GODLY.
+In real analysis, a function defined on a given range can be smoothly extended to outer regions in many ways. There's only a unique way to do so for analytic functions. This great property makes complex analysis almost GODLY.\\
 
-If two analytic functions coincide in any region, or on any finite line segment, they are the same function.
+\noindent If two analytic functions coincide in any region, or on any finite line segment, they are the same function.
 
-\end{itemize}
 
 \chapter{Differential Equations}
 
@@ -242,6 +246,7 @@ I won't even mention ODE's with constant coefficients.
 \item One can always find integrating factor for first order ODE in principle. In practice, we only know direct formula for \textbf{linear} first order ODE. This also means that every differential constraint (in two dimensions) is holonomic.
 
 \item List of famous non-linear first order equations that can be solved
+
 \begin{enumerate}
 \item Bernoulli equation
   $$\frac{dy}{dx} + P(x)y = Q(x)y^n$$
@@ -452,5 +457,19 @@ This method makes previous two methods a consequence. Consider the integral
 $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \noindent If we choose a contour such that the $\psi(t)$ is constant on this contour, we can bring it out of the integral and use laplace's method. This will enable us to find higher order terms that we missed in stationary phase method. Please check the video by Professor Strogatz for example.\\
+
+\chapter{General Relativity}
+\begin{itemize}
+\item An observer is a worldine where the basis vector he chooses at each point of the worldline reduces the metric to $\eta\indices{_a_b}$. In effect, he's someone who uses flat metric at all points of the worldline. (Schuller Lect 13. 41:26)
+
+\item The cause of your confusion was that expanding the metric around some point (which you can flatten using gaussian normal coordinates at any point one at a time) is not the same as taking limit of the metric near some region. Taking this limit, we may not get flat metric all the time, it was a mere coincidence in case of Near Horizon geometry of Schwarzschild Blackhole. Remember AdS2 geometry in RN blackhole?
+
+\item All we can do in reality is measure proper distance, and use it to determine the coordinates that we use.
+
+\begin{enumerate}
+  \item
+$\Gamma\indices{^t_m_n} = \frac{1}{2}g\indices{^s^t}\left[\partial_n g\indices{_s_m} + \partial_m g\indices{_s_n}-\partial_s g\indices{_m_n}\right]$
+\end{enumerate}
+\end{itemize}
 
 \end{document}
