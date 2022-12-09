@@ -1,5 +1,6 @@
 \documentclass{report}
 \usepackage{amsfonts}
+\usepackage{hyperref}
 \usepackage{graphicx}
 \graphicspath{./Images/}
 \usepackage{amssymb}
@@ -308,6 +309,10 @@ $$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a
 
 \noindent Namely, if $f(x)$ satisfy boundary conditions of Sturm-Liouville and is continous and piecewise differentiable on $[a,b]$ then eignefunction expansion of $f$ converges uniformly to $f$ on $[a,b]$. If it's piecewise differentiable, then it converges to $[f(x_+) + f(x_-)]/2$ on $[a,b]$.
 
+\subsection{Special Functions and Polynomials}
+
+A summary of results about special functions can be found \href{https://webspace.science.uu.nl/~hooft101/lectures/specialfct.pdf}{here}.
+
 \subsection{Variational Method}
 Suppose that the spectrum of the hamiltonian $H$ has a finite greatest lower bound. In such cases, we have a simple yet very powerful method to guess the ground state energy and wavefunction.
 
@@ -315,6 +320,7 @@ Suppose that the spectrum of the hamiltonian $H$ has a finite greatest lower bou
 $$\expval{H}{\Psi} \ge E_0$$
 
 \noindent This allows us to guess a paramaterized wavefunction and choose the parameter which minimizes the expectation value. The result can only get better because the ground state has lowest energy among all such $\psi$
+
 
 \section{Partial Differential Equations}
 Second order (mostly linear, but even non-linear) partial differential equations are everywhere. It's all of physics. 
