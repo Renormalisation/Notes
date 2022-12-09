@@ -11,7 +11,7 @@
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=cyan,
-    pdftitle={Overleaf Example},
+    pdftitle={Notes},
     pdfpagemode=FullScreen,
 }
 
@@ -29,6 +29,8 @@
 
   \noindent \textsc{\large I knew a lot of things. Over time, I forgot many things. Now, I only know a few things. Therefore I took the wise decision of noting stuff down. To start, I try to summarize the most elementary things I knew, and the hope is that I'll keep on adding new things that I learn. For now, it's almost all the undergrad stuff which I am trying to summarize as quickly as possible.}
 \end{titlepage}
+
+\tableofcontents
 
 \chapter{Magic of Infinitesimals}
 \section{Continuity}
@@ -171,7 +173,7 @@ $$ r:= \lim_{n\to\infty}\big(a_n/b_n\big) $$
 
 \noindent\textbf{Theorem 4 :} Every rearrangement of an absolutely convergent series converges to the same sum.\\
 
-\subsection{Power series :}
+\section{Power series :}
 
 There's only one power series for a given funcion (Coefficients are obviously uniquely defined by differentiation).
 
@@ -207,8 +209,6 @@ Follwowing are the conseqences of uniform convergence :
 \item Differentiating under the integral sign. Uniform convergence in $\alpha$ is required for infinite limits.
 
 \item Integrating under the integral sign is rarely appreciated. Nice trick.
-
-\item A nice understanding of how lengths change under change of coordinates. The jacobian can easily be derived by parellelopiped volume formula.
 
 \item Green's and Stokes theorem (easy proof).
 
@@ -319,7 +319,7 @@ $$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a
 
 \subsection{Special Functions and Polynomials}
 
-A summary of results about special functions can be found \href{https://webspace.science.uu.nl/~hooft101/lectures/specialfct.pdf}{here}.
+A summary of results about special functions can be found \href{https://webspace.science.uu.nl/~hooft101/lectures/specialfct.pdf}{Here}
 
 \subsection{Variational Method}
 Suppose that the spectrum of the hamiltonian $H$ has a finite greatest lower bound. In such cases, we have a simple yet very powerful method to guess the ground state energy and wavefunction.
@@ -471,6 +471,8 @@ This method makes previous two methods a consequence. Consider the integral
 $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \noindent If we choose a contour such that the $\psi(t)$ is constant on this contour, we can bring it out of the integral and use laplace's method. This will enable us to find higher order terms that we missed in stationary phase method. Please check the video by Professor Strogatz for example.\\
+
+\chapter{Quantum Mechanics}
 
 \chapter{General Relativity}
 \begin{itemize}
