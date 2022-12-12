@@ -373,7 +373,7 @@ $$ f(x) \sim a_1\phi_1(x) + a_2\phi_2(x) + ... $$
 
 \noindent $\bold {Caution 2:}$ Need to keep higher order terms in exponentials (including sin,cos,sinh,cosh etc). Not doing so, can give wrong prefactor.\\
 
-\noindent $\bold{Caution 3:}$ Differentiating can cause trouble too. Look at "Tauberian Theorems" (BO - p.127)
+\noindent $\bold{Caution 3:}$ Differentiating can cause trouble too. Look at ``Tauberian Theorems" (BO - p.127)
 
 \section{For Integrals}
 
@@ -391,7 +391,7 @@ We hope that the second integral has lower order than the first term and that $\
 
 \subsection{Laplace's Method}
 
-For "sharply-peaked" integrands, where the dominant contribution comes from the nbd of a single point, we can expand the function involved in exponent around that point.\\
+For ``sharply-peaked" integrands, where the dominant contribution comes from the nbd of a single point, we can expand the function involved in exponent around that point.\\
 
 \noindent $\bold{Example 1 :}$
 
@@ -458,10 +458,10 @@ $$J_0(x) = \frac{1}{\pi}\int_{0}^{\infty}\cos(x\sin(t)) dt$$
 
 $$\sin\left(t\right) = \sin\left(\frac{\pi}{2}\right) + \cos\left(\frac{\pi}{2}\right)\left(t-\frac{\pi}{2}\right) -\frac{1}{2}\sin\left(\frac{\pi}{2}\right)\left(t-\frac{\pi}{2}\right)^2 + ...$$
 
-$$\mathrm{As}\quad x\to\infty\quad \frac{1}{\pi}\int_{0}^{\pi}e^{ix\sin(t)}dt$$
-$$\sim \frac{1}{\pi}\int_{\frac{\pi}{2}-\epsilon}^{\frac{\pi}{2}+\epsilon}e^{ix\left[1-\frac{1}{2}\left(t-\frac{\pi}{2}\right)^2 +...\right]}dt$$
+$$\mathrm{As}\quad x\to\infty$$ 
+$$\frac{1}{\pi}\int_{0}^{\pi}e^{ix\sin(t)}dt\sim \frac{1}{\pi}\int_{\frac{\pi}{2}-\epsilon}^{\frac{\pi}{2}+\epsilon}e^{ix\left[1-\frac{1}{2}\left(t-\frac{\pi}{2}\right)^2 +...\right]}dt$$
 
-\noindent As done again and again, expanding the limits of integration because if only affects higher order terms, we get 
+\noindent As done again and again, expanding the limits of integration because it only affects higher order terms, we get 
 
 $$J_0\left(x\right) \sim \sqrt{\frac{2}{\pi x}} \cos\left(x-\frac{\pi}{4}\right) \quad\mathrm{as}\quad x\to\infty$$
 
