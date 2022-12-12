@@ -7,12 +7,12 @@
 \usepackage{tensor}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    pdftitle={Notes},
-    pdfpagemode=FullScreen,
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=cyan,
+  pdftitle={Notes},
+  pdfpagemode=FullScreen,
 }
 
 \author{Jay Rashamiya}
@@ -20,11 +20,11 @@
 
 \begin{titlepage}
   \begin{center}
-  \line(1,0){300}\\
-  \huge{\bfseries Tricks and Techniques}\\
-  \line(1,0){300}\\
-  \textsc{\LARGE Jay Rashamiya}\\
-  \vspace{5cm}
+    \line(1,0){300}\\
+    \huge{\bfseries Tricks and Techniques}\\
+    \line(1,0){300}\\
+    \textsc{\LARGE Jay Rashamiya}\\
+    \vspace{5cm}
   \end{center}
 
   \noindent \textsc{\large I knew a lot of things. Over time, I forgot many things. Now, I only know a few things. Therefore I took the wise decision of noting stuff down. To start, I try to summarize the most elementary things I knew, and the hope is that I'll keep on adding new things that I learn. For now, it's almost all the undergrad stuff which I am trying to summarize as quickly as possible.}
@@ -179,24 +179,24 @@ There's only one power series for a given funcion (Coefficients are obviously un
 
 \begin{itemize}
 
-\item If a power series converges for some $x=x_1$, it converges absolutely and uniformly for all $|x_2| < |x_1|$. This can be proven using comparision test.\\
+  \item If a power series converges for some $x=x_1$, it converges absolutely and uniformly for all $|x_2| < |x_1|$. This can be proven using comparision test.\\
 
-Follwowing are the conseqences of uniform convergence :
+    Follwowing are the conseqences of uniform convergence :
 
-\begin{enumerate}
-\item The function defined by power series is continuous inside the region of convergence. 
+    \begin{enumerate}
+      \item The function defined by power series is continuous inside the region of convergence. 
 
-\item The power series can be integrated term by term in the region of convergence.
+      \item The power series can be integrated term by term in the region of convergence.
 
-\item The power series can be differentiated term by term. This is a more restrictive condition : the continuity of all individual derivatives as well as  the uniform convergence of the series formed by derviative is required.
+      \item The power series can be differentiated term by term. This is a more restrictive condition : the continuity of all individual derivatives as well as  the uniform convergence of the series formed by derviative is required.
 
-\end{enumerate}
+    \end{enumerate}
 
-\item On the boundary of region of convergence, there is atleast one singularity.
+  \item On the boundary of region of convergence, there is atleast one singularity.
 
-\item Laurent Series and Analytic function.
+  \item Laurent Series and Analytic function.
 
-\item Using residue calculus to sum the series.
+  \item Using residue calculus to sum the series.
 
 \end{itemize}
 
@@ -204,13 +204,13 @@ Follwowing are the conseqences of uniform convergence :
 
 \begin{itemize}
 
-\item Any upper sum will be greater than any lower sum. Infinite integrals (in integrands and in limits) are defined by taking appropriate limits. If function is discontinuous at only finitely many points, both limits approach to the same value, which is defined as the integral
+  \item Any upper sum will be greater than any lower sum. Infinite integrals (in integrands and in limits) are defined by taking appropriate limits. If function is discontinuous at only finitely many points, both limits approach to the same value, which is defined as the integral
 
-\item Differentiating under the integral sign. Uniform convergence in $\alpha$ is required for infinite limits.
+  \item Differentiating under the integral sign. Uniform convergence in $\alpha$ is required for infinite limits.
 
-\item Integrating under the integral sign is rarely appreciated. Nice trick.
+  \item Integrating under the integral sign is rarely appreciated. Nice trick.
 
-\item Green's and Stokes theorem (easy proof).
+  \item Green's and Stokes theorem (easy proof).
 
 \end{itemize}
 
@@ -218,11 +218,11 @@ Follwowing are the conseqences of uniform convergence :
 
 \begin{itemize}
 
-\item Cauchy reimann conditions for analyticity are sufficient when first order derivatives are also continuous. Analyticity is defined as differentiability in a region. 
+  \item Cauchy reimann conditions for analyticity are sufficient when first order derivatives are also continuous. Analyticity is defined as differentiability in a region. 
 
-\item As an example $|z|^2$ is differentiable at $z=0$ but not analytic anywhere.
+  \item As an example $|z|^2$ is differentiable at $z=0$ but not analytic anywhere.
 
-\item The corresponding real functions of analytic function are harmonic and the conjugate functions form an orthogonal family. Moving along one would give maximum change in the other. The mapping is conformal at point when $f'(z) \neq 0$ or $f'(z) \neq \infty$.
+  \item The corresponding real functions of analytic function are harmonic and the conjugate functions form an orthogonal family. Moving along one would give maximum change in the other. The mapping is conformal at point when $f'(z) \neq 0$ or $f'(z) \neq \infty$.
 
 \end{itemize}
 
@@ -252,24 +252,24 @@ I won't even mention ODE's with constant coefficients.
 \section{First Order ODE}
 
 \begin{itemize}
-\item One can always find integrating factor for first order ODE in principle. In practice, we only know direct formula for \textbf{linear} first order ODE. This also means that every differential constraint (in two dimensions) is holonomic.
+  \item One can always find integrating factor for first order ODE in principle. In practice, we only know direct formula for \textbf{linear} first order ODE. This also means that every differential constraint (in two dimensions) is holonomic.
 
-\item List of famous non-linear first order equations that can be solved
+  \item List of famous non-linear first order equations that can be solved
 
-\begin{enumerate}
-\item Bernoulli equation
-  $$\frac{dy}{dx} + P(x)y = Q(x)y^n$$
-\item Clairaut's equation
-  $$y = x\frac{dy}{dx} + f\left(\frac{dy}{dx}\right)$$
-\item D'Alembert's equation
-  $$y = xf\left(\frac{dy}{dx}\right) + g\left(\frac{dy}{dx}\right)$$
-\end{enumerate}
+    \begin{enumerate}
+      \item Bernoulli equation
+        $$\frac{dy}{dx} + P(x)y = Q(x)y^n$$
+      \item Clairaut's equation
+        $$y = x\frac{dy}{dx} + f\left(\frac{dy}{dx}\right)$$
+      \item D'Alembert's equation
+        $$y = xf\left(\frac{dy}{dx}\right) + g\left(\frac{dy}{dx}\right)$$
+    \end{enumerate}
 
 \end{itemize}
 
 \section{Second Order Linear ODE}
 Most important differential equations arising in physics are almost always second order and linear (ordinary or partial). Let's consider only the homogenous part right now.
-  $$y'' + P(x)y' + Q(x) = 0$$
+$$y'' + P(x)y' + Q(x) = 0$$
 
 \noindent \textbf{Ordinary Point :} $x_0$ for which $P(x_0)$ and $Q(x_0)$ are finite.\\
 
@@ -312,7 +312,7 @@ $$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a
   \item Neumann Boundary : $u'$ and $v'$ both vanish at endpoints.
   \item Any second order linear operator can be turned into Sturm-Liouville form by changing the scalar product to include weight factor.
 \end{itemize}
-  
+
 \noindent If $u$ and $v$ are eigenfunctions of $\mathcal{L}$ with respective eigenvalues $\lambda_u$ and $\lambda_v$, then we can see that they are orthogonal. \textbf{This is great beacause we have just proven orthogonality of Trigonometric, Bessel, Legendre, Hermite, Laguerre, Chebyshev. Further, completeness of eigenfunctions is the origin of fourier series!}\\
 
 \noindent Namely, if $f(x)$ satisfy boundary conditions of Sturm-Liouville and is continous and piecewise differentiable on $[a,b]$ then eignefunction expansion of $f$ converges uniformly to $f$ on $[a,b]$. If it's piecewise differentiable, then it converges to $[f(x_+) + f(x_-)]/2$ on $[a,b]$.
@@ -474,23 +474,34 @@ $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \chapter{Quantum Mechanics}
 
+
 \chapter{General Relativity}
+No better summary than Dirac's 60 page book.
+
 \begin{itemize}
-\item An observer is a worldine where the basis vector he chooses at each point of the worldline reduces the metric to $\eta\indices{_a_b}$. In effect, he's someone who uses flat metric at all points of the worldline. (Schuller Lect 13. 41:26)
+  \item An observer is a worldine where the basis vector he chooses at each point of the worldline reduces the metric to $\eta\indices{_a_b}$. In effect, he's someone who uses flat metric at all points of the worldline. (Schuller Lect 13. 41:26)
 
-\item All momentum components $p\indices{^\mu}$ are not independent due to reparameterization invariance of the lagrangian. In classical mechanics, time was a thing which was used to define action. (David Tong p.22 GR).
-
-\item The cause of your confusion was that expanding the metric around some point (which you can flatten using gaussian normal coordinates at any point one at a time) is not the same as taking limit of the metric near some region. Taking this limit, we may not get flat metric all the time, it was a mere coincidence in case of Near Horizon geometry of Schwarzschild Blackhole. Remember AdS2 geometry in RN blackhole?
-
-\item All we can do in reality is measure proper distance, and use it to determine the coordinates that we use.
-
-\item In 2 dimesnions, gaussian curvature is sufficient to describe inner properties of the space. In higher dimensions, we need more.
+  \item All momentum components $p\indices{^\mu}$ are not independent due to reparameterization invariance of the lagrangian. In classical mechanics, time was a thing which was used to define action. (David Tong p.22 GR).
 
 
-\begin{enumerate}
-  \item
-$\Gamma\indices{^t_m_n} = \frac{1}{2}g\indices{^s^t}\left[\partial_n g\indices{_s_m} + \partial_m g\indices{_s_n}-\partial_s g\indices{_m_n}\right]$
-\end{enumerate}
+  \item In 2 dimesnions, gaussian curvature is sufficient to describe inner properties of the space. In higher dimensions, we need more.
+
+
+    \begin{enumerate}
+      \item Suppose $P\indices{_\mu_\nu_\lambda}$ is such that $A\indices{^\mu}P\indices{_\mu_\nu_\lambda}$ is a tensor for any vector $A\indices{^\mu}$. Then $P\indices{_\mu_\nu_\lambda}$ is a tensor. Useful for quickly proving something is a tensor.
+      
+        $\Gamma\indices{^t_m_n} = \frac{1}{2}g\indices{^s^t}\left[\partial_n g\indices{_s_m} + \partial_m g\indices{_s_n}-\partial_s g\indices{_m_n}\right]$
+      \item
+        $\nabla\indices{_\mu}A\indices{^\nu} = \partial_{\mu}A\indices{^\nu} + \Gamma\indices{^\nu_\lambda_\mu}A\indices{^\lambda}$
+      \item
+        $\nabla\indices{_\mu}A\indices{_\nu} = \partial_{\mu}A\indices{_\nu} - \Gamma\indices{^\lambda_\nu_\mu}A\indices{_\lambda}$ \\
+        For general tensors, use leibniz rule. $g\indices{_\mu_\nu}$ can be treated as a constant under covariant derivative.
+
+      \item $\nabla\indices{_ \rho}\nabla\indices{_\sigma}A\indices{_\nu} - \nabla\indices{_\sigma}\nabla\indices{_ \rho}A\indices{_ \nu} = A\indices{_ \beta}R\indices{^\beta_\nu_ \rho_\sigma}$
+
+      \item $R\indices{^\beta_\nu_ \rho_\sigma} = \partial_ {\rho}\Gamma\indices{^\beta_\nu_\sigma}-\partial_ {\sigma}\Gamma\indices{^\beta_\nu_\rho} + \Gamma\indices{^\alpha_\nu_\sigma} \Gamma\indices{^\beta_ \alpha_ \rho} - \Gamma\indices{^\alpha_\nu_ \rho} \Gamma\indices{^\beta_ \alpha_ \sigma}$
+
+    \end{enumerate}
 \end{itemize}
 
 \end{document}
