@@ -317,6 +317,8 @@ $$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a
 
 \noindent Namely, if $f(x)$ satisfy boundary conditions of Sturm-Liouville and is continous and piecewise differentiable on $[a,b]$ then eignefunction expansion of $f$ converges uniformly to $f$ on $[a,b]$. If it's piecewise differentiable, then it converges to $[f(x_+) + f(x_-)]/2$ on $[a,b]$.
 
+\noindent To solve, inhomogenous strum lioville equation, we solve the eigenequation of the given operator with given boundary condition, which allows us to find the eigenfunction expansion of the inhomogenous equation.
+
 \subsection{Special Functions and Polynomials}
 
 A summary of results about special functions can be found \href{https://webspace.science.uu.nl/~hooft101/lectures/specialfct.pdf}{Here}
@@ -511,7 +513,7 @@ $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \noindent\textbf{Invariant Subgroup:} Say $H$ is a group. Conjugate $H$ with some $g$ not in $H$. It will give another group. Conjugation will lend to similar elements but not same. If the conjugated group is same as the original group \textbf{for all g}. Then that group is special, and rightly deserves the name Invariant subgroup. All elements equivalent to elements in the subgroup $H$ are also in $H$.\\
 
-\noindent\textbf{Quotient Group:} If $G$ has an invariant subgroup $H$, we can form another group consisting left cosets $g_aH$ as elements called the Quotient group $G/H$.\\
+\noindent\textbf{Quotient Group:} If $G$ has an invariant subgroup $H$, we can form another group consisting of left cosets $g_aH$ as elements called the Quotient group $G/H$. We can zoom out sets using equivalence relation, in the same way we need invariant subgroups to zoom out of the group if we want to preserve the group strucutre. It's a somewhat stronger condition than just using equivalence class to zoom out in order to keep group structure. \\
 
 \section{Rotations and Lie Algebra}
 
@@ -519,7 +521,7 @@ Calculus is mankind's greatest invention. We analyze behaviours of functions in 
 
 $$R^{T}R = I \quad det(R) = 1$$
 
-Check that generators are antisymmetric matrices. We stick in $-i$ to make the generators hermitian.
+\noindent Check that generators are antisymmetric matrices. We stick in $-i$ to make the generators hermitian.
 
 \subsection{Lie Algebra}
 
@@ -529,7 +531,7 @@ Instead of looking at the actual elements of the group, we are now concerned wit
 
 $$[J_i, J_j] = i\epsilon\indices{_i_j_k}J_k$$
 
-We can do something like this for all sorts of lie groups. Where $\epsilon$ are repaced by some other constants known as the structure cosntatnts.
+\noindent We can do something like this for all sorts of lie groups. Where $\epsilon$ are repaced by some other constants known as the structure cosntatnts.
 
 \section{Representation Theory}
 
