@@ -340,7 +340,7 @@ $$\mathcal{L}\phi = a\frac{\partial\phi}{\partial x} + b\frac{\partial\phi}{\par
 
 \noindent We generally try to change variables in such a manner that the equation reduces to something which only contains derivative w.r.t one term. Here $s = ax+br, t= bx-ay$ does the job. Reducing it to 
 
-$$\frac{\partial\phi}{\partial s} = 0 \quad \phi(x,y) = f(bx-ay)$$
+$$\frac{\partial\phi}{\partial s} = 0 \quad\implies \phi(x,y) = f(bx-ay)$$
 
 \noindent Observe that the solution is constant along constant $t$. It is known as the charecterisic curve. It's not necessary that solution remains constant on charecteristic cuve, but it can be solved using ODE methods on the charecteristic curve. If $\phi(x,y)$ is specified on a curve segment, one can deduce its value on all the charecteristics that intersects it.
 
@@ -353,6 +353,16 @@ $$\phi(x,y) = \phi(x_0,y_0) + \frac{\partial \phi(x_0,y_0)}{\partial x}(x-x_0) +
 \noindent Exact general analysis of boundary conditions is complicated. Look up when you need it. For reference of three simple yet important PDE's\\
 
 \includegraphics[width=10cm, height=7cm]{./Images/boundary.png}
+
+\section{Integral Transforms}
+Due to integration by parts, we can change derivatives to algebraic equations by integral transforms. Additionally, we have shifting property to receive answers modulo exponential.
+
+\section{Dirac Delta}
+Any sequence of function, whose integral over all space is unity and it vanishes for all points except at zero as $n$ goes to $\infty$ will converge to dirac delta function. Extremely useful in quantum field theory.
+
+\begin{enumerate}
+  \item $\delta(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty} e^{ikx} dk $
+\end{enumerate}
 
 \chapter{Asymptotics and Perturbation Methods}
 
@@ -448,7 +458,7 @@ $$I(x) \sim O\left(\frac{1}{x}\right)$$
 
 $$\mathrm{if}\quad f^{(i)}(c) = 0 \quad\forall i<n \quad \mathrm{then} \quad  I(x) \sim O\left(\frac{1}{x^{\frac{1}{n}}}\right)$$
 
-\noindent A useful way to think about both the laplace and stationary phase method in a coherent manner is to see that the function multiplying $f(t)$ has an exponential order. Meaning they change much faster than $f(t)$ as long as $f(t)$ doesn't have exponential order. Note that complex representation of sin and cosine make this evident for this oscillatory functions as well. In some sense then, the integral is wholly dominated by this exponential ordered terms (including sine,cosine). Therefore we only care about the regions where this exponential ordered terms are slowly varying (given that they decay eventually in case of laplace method). In laplace method, it was the peak. In stationary phase method, it is the stationary phase. The reason we only care about regions where the exponential term is slowly varying can easily be digested by seeing how well the integral $\int_{0}^{\infty}e^{-x}dx$ is approximated by $\int_{0}^{a}e^{-x}dx$. First order change in $a$ would give exponentially better approximation. In this case, $0$ was the point of slower change.\\
+\noindent A useful way to think about both the laplace and stationary phase method in a coherent manner is to see that the function multiplying $f(t)$ has an exponential order. Meaning they change much faster than $f(t)$ as long as $f(t)$ doesn't have exponential order. Note that complex representation of sin and cosine make this evident for this oscillatory functions as well. In some sense then, the integral is wholly dominated by this exponential ordered terms (including sine,cosine). Therefore we only care about the regions where this exponential ordered terms are slowly varying (given that they decay eventually in case of laplace method). In laplace method, it was the peak. In stationary phase method, it is the stationary phase.\\
 
 \noindent \textbf{Bessel function}\\
 
@@ -471,6 +481,23 @@ This method makes previous two methods a consequence. Consider the integral
 $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \noindent If we choose a contour such that the $\psi(t)$ is constant on this contour, we can bring it out of the integral and use laplace's method. This will enable us to find higher order terms that we missed in stationary phase method. Please check the video by Professor Strogatz for example.\\
+
+\chapter{Groups}
+
+\textbf{Lagrange's Theorem:} Order of every subgroup divides the order of original group. (Using disjointness of cosets)\\
+
+\noindent\textbf{Once and Only Once Rule:} In the multiplication table, each row or each column contains each element of the group exactly once. Try constructing all posible finite groups of order n.\\
+
+\noindent\textbf{Centre:} The set defined by elements $z_i$ such that $z_i$ commutes with all elements of the group is an abelian subgroup of $G$.\\
+
+\noindent\textbf{Cayley's Theorem:} Any finite group $G$ with $n$ elements is isomorphic to a subgroup of $S_n$ (Permutation Group). (Associate each $g_i$ with corresponding permutation by checking the permutation offered by observing the permutation table.)\\
+
+\noindent\textbf{Permutations:} A permutation can be decomposed into product of two cycles. It's even or odd depending on number of two cycles present (Represented by determinant). (Imagine the ball hiding guy arranging the glasses. He achieves all sort of permutation by doing exchanges again and again). Odd and even because matrix representation corresponds to elementary operations which have determinants $1$ or $-1$.\\
+
+\noindent\textbf{Conjugation:} Two elements $g$ and $g'$ are similar if there exists an element $f$ such that $f^{-1}gf = g'$. Conjugation is an equivalence relation, therefore we can form equivalence classes. (Doing something, doing main thing, undoing something leads to a similar element in some sense. Which is what defines this relation). Equivalence classes provide disjoint partitions of the set (Simple proof).\\
+
+\noindent\textbf{Invariant Subgroup:} Say $H$ is a group. Conjugate $H$ with some $g$ not in $H$. It will give another group. Conjugation will lend to similar elements but not same. If the conjugated group is same as the original group \textbf{ for all g}. Then that group is special, and rightly deserves the name Invariant subgroup.
+
 
 \chapter{Quantum Mechanics}
 
