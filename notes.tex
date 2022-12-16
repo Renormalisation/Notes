@@ -226,7 +226,7 @@ There's only one power series for a given funcion (Coefficients are obviously un
 
 \end{itemize}
 
-\section{Cauchy's Theorem and Integral Formula:} If $f(z)$ is analytic in a simply connected region and $C$ is a closed contour in that region then
+\section{Cauchy's Theorem and Integral Formula} If $f(z)$ is analytic in a simply connected region and $C$ is a closed contour in that region then
 
 $$\oint_{C}f(z)dz = 0$$
 
@@ -368,7 +368,7 @@ A function $f(x,y)$ can be seen as a function $g$ of $u$ and $y$ by certain tran
 
 $$g = f - ux$$
 
-This is key to going from lagrangian formalism to hamiltonian.
+\noindent This is key to going from lagrangian formalism to hamiltonian.
 
 \section{Dirac Delta}
 Any sequence of function, whose integral over all space is unity and it vanishes for all points except at zero as $n$ goes to $\infty$ will converge to dirac delta function. Extremely useful in quantum field theory.
@@ -499,15 +499,15 @@ $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \section{Finite Groups}
 
-\textbf{Lagrange's Theorem:} Order of every subgroup divides the order of original group. (Using disjointness of cosets)\\
-
 \noindent\textbf{Once and Only Once Rule:} In the multiplication table, each row or each column contains each element of the group exactly once. Try constructing all posible finite groups of order n.\\
+
+\noindent\textbf{Lagrange's Theorem:} Order of every subgroup divides the order of original group. (Using disjointness of cosets)\\
 
 \noindent\textbf{Centre:} The set defined by elements $z_i$ such that $z_i$ commutes with all elements of the group is an abelian subgroup of $G$.\\
 
-\noindent\textbf{Cayley's Theorem:} Any finite group $G$ with $n$ elements is isomorphic to a subgroup of $S_n$ (Permutation Group). (Associate each $g_i$ with corresponding permutation by checking the permutation offered by observing the permutation table.)\\
-
 \noindent\textbf{Permutations:} A permutation can be decomposed into product of two cycles. It's even or odd depending on number of two cycles present. (Imagine the ball hiding guy arranging the glasses. He achieves all sort of permutation by doing exchanges again and again). Odd and even because matrix representation corresponds to elementary operations which have determinants $1$ or $-1$.\\
+
+\noindent\textbf{Cayley's Theorem:} Any finite group $G$ with $n$ elements is isomorphic to a subgroup of $S_n$ (Permutation Group). (Associate each $g_i$ with corresponding permutation by checking the permutation offered by observing the permutation table.)\\
 
 \noindent\textbf{Conjugation:} Two elements $g$ and $g'$ are similar if there exists an element $f$ such that $f^{-1}gf = g'$. Conjugation is an equivalence relation, therefore we can form equivalence classes. (Doing something, doing main thing, undoing something leads to a similar element in some sense. Which is what defines this relation). Equivalence classes provide disjoint partitions of the set (Simple proof). Equivalence relations provide a zoom out lens of a given set\\
 
@@ -539,13 +539,45 @@ It's useful to represent the group elements $g$ as matrices which preserve the m
 
 $$D(g_1 g_2) = D(g_1)D(g_2)$$
 
-Obviously, $D(g) = 1$ (one dimensional identity matrix) is a perfectly good representation. There's a loss of information in some sense. $D$ is homomorphism as is written, but if it is an isomorphism, we say that the representation is faithful (useful). Since every finite group is a subgroup of $S_n$, and $S_n$ has obvious representation of dimension $n$, we have faithful representations of every finite group. (A bit complicated for continuous groups, but we're physicists)
+\noindent Obviously, $D(g) = 1$ (one dimensional identity matrix) is a perfectly good representation. There's a loss of information in some sense. $D$ is homomorphism as is written, but if it is an isomorphism, we say that the representation is faithful (useful). Since every finite group is a subgroup of $S_n$, and $S_n$ has obvious representation of dimension $n$, we have faithful representations of every finite group. (A bit complicated for continuous groups, but we're physicists)
 
-\subsection{Character of a Representation}
+\subsection{Character is a function of class}
 
-There may be many representations of the same group. We denote a particular representation $r$ by $D^{(r)}$. Character of a particular element under a given representation is the trace of $D^{(r)}(g)$ , and is denoted by $\xi^{(r)}(g)$. It's easy to prove that \textbf{character of an entire equivalence class is same.} (Using cyclic property of trace).
+There may be many representations of the same group. We denote a particular representation $r$ by $D^{(r)}$. Character of a particular element under a given representation is the trace of $D^{(r)}(g)$ , and is denoted by $\chi^{(r)}(g)$. It's easy to prove that \textbf{character of an entire equivalence class is same.} (Using cyclic property of trace).
+
+\subsection{Equivalent represntation} 
+
+As mentioned, there may be more than one representation of a given group. Clearly, We are only concerned with reducible representations. Even among the reducible representations, given a representation $D(g)$, we can construct another representation $D'(g) = S^-1 D(g) S$ (check that $D'$ is really a presentation). These representations are esentially the same connected by similarity transformation. If we are given two represenations, are they same? One thing you can check is that the character is invariant under the representations connected by similarity transformation.
 
 \chapter{Quantum Mechanics}
+
+\begin{itemize}
+
+  \item A state of quantum system is defined by a ket $\ket{\psi}$ or the corresponding bra $\bra{\psi}$ (For every vector space, we can construct a dual space (of linear functionals)). There is a one-one correspondence between this space.
+
+  \noindent \textbf {Pedantry} : If $V$ is a finite dimensional vector space, its dual $V^*$ has the same dimension. Therefore, they're isomorphic. (Note that finite dimensional vector spaces with same dimensions are obviously isomorphic.) By establishing the dual basis, we establish this isomorphism between $V$ and $V^*$. But this isomorphism is not natural. However, if we have an inner product space, we can have almost natural isomorphism between a vector $\ket{\alpha}$ and its dual, $\bra{\alpha}$ is naturally defined by fixing the first element of inner product as $\ket{\alpha}$.
+
+  \item Two fundamental postulates on inner prdocut in QM :
+    $$\bra{\alpha}\ket{\alpha} = \bra{\beta}\ket{\alpha}^* \quad \textrm{and} \quad \bra{\alpha}\ket{\alpha} \ge 0$$ 
+
+  \item The eigenvalues of a Hermitian operator ar ereal and Eigenkets corresponding to different eigenvalues are orthogonal. Every observable corresponds to a Hermitian operator. Converse, I am not aware of yet. \\
+
+  \textbf{Postulate:} The eigenkets of an observable are complete. This is a physical requirement, not a mathematical truth. As a consequence, we start by identifying the observables, and since they're hermitian, we choose an orthonormal basis consisting of eigenkets of this observable, which will span the entire hilbert space.
+
+\item If $[A,B] = 0$, we they've same, every eigenvector of $A$ is an eigenvector of $B$.
+
+\item Given two sets of base kets ${\ket{a^{(i)}}}$ and ${\ket{b^{(i)}}}$, there is a unitary operator
+
+  $$U = \sum_{k} \ket{b^{(k)}}\bra{a^{(k)}}$$
+
+  such that $\ket{b^{(i)}} = U\ket{a^{(i)}}$
+
+  Check $U^\dag U = I$
+
+\item Matrix representation of the operator $X$ changes in different bases by a similarity transformation $X' = U^\dag XU$, where $X, U, X'$ are now seen as matrices, not operators.
+
+
+\end{itemize}
 
 
 \chapter{General Relativity}
@@ -561,16 +593,18 @@ No better summary than Dirac's 60 page book.
 
 
     \begin{enumerate}
+      \item Metric can be chosen at a point such that $g\indices{_\mu_\nu}(P) = \eta\indices{_\mu_\nu}$ and $\Gamma\indices{^\alpha_\beta_\gamma}(P) = 0$ (Poisson p.27)
+
       \item Suppose $P\indices{_\mu_\nu_\lambda}$ is such that $A\indices{^\mu}P\indices{_\mu_\nu_\lambda}$ is a tensor for any vector $A\indices{^\mu}$. Then $P\indices{_\mu_\nu_\lambda}$ is a tensor. Useful for quickly proving something is a tensor.
       
-      \item $\Gamma\indices{^t_m_n} = \frac{1}{2}g\indices{^s^t}\left[\partial_n g\indices{_s_m} + \partial_m g\indices{_s_n}-\partial_s g\indices{_m_n}\right]$
+      \item $\Gamma\indices{^\alpha_ \beta_ \gamma} = \frac{1}{2}g\indices{^\alpha^\lambda}\left[\partial_ \gamma g\indices{_ \lambda_ \beta} + \partial_ \beta g\indices{_\lambda_ \gamma}-\partial_\lambda g\indices{_ \beta_ \gamma}\right]$
       \item
         $\nabla\indices{_\mu}A\indices{^\nu} = \partial_{\mu}A\indices{^\nu} + \Gamma\indices{^\nu_\lambda_\mu}A\indices{^\lambda}$
       \item
         $\nabla\indices{_\mu}A\indices{_\nu} = \partial_{\mu}A\indices{_\nu} - \Gamma\indices{^\lambda_\nu_\mu}A\indices{_\lambda}$ \\
         For general tensors, use leibniz rule. $g\indices{_\mu_\nu}$ can be treated as a constant under covariant derivative.
 
-      \item $\nabla\indices{_ \rho}\nabla\indices{_\sigma}A\indices{_\nu} - \nabla\indices{_\sigma}\nabla\indices{_ \rho}A\indices{_ \nu} = A\indices{_ \beta}R\indices{^\beta_\nu_ \rho_\sigma}$
+      \item $\nabla\indices{_ \rho}\nabla\indices{_\sigma}A\indices{_\nu} - \nabla\indices{_\sigma}\nabla\indices{_ \rho}A\indices{_ \nu} = A\indices{_ \lambda}R\indices{^\lambda_\nu_ \rho_\sigma}$
 
       \item $R\indices{^\beta_\nu_ \rho_\sigma} = \partial_ {\rho}\Gamma\indices{^\beta_\nu_\sigma}-\partial_ {\sigma}\Gamma\indices{^\beta_\nu_\rho} + \Gamma\indices{^\alpha_\nu_\sigma} \Gamma\indices{^\beta_ \alpha_ \rho} - \Gamma\indices{^\alpha_\nu_ \rho} \Gamma\indices{^\beta_ \alpha_ \sigma}$
 
