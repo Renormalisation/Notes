@@ -507,9 +507,9 @@ $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \noindent\textbf{Permutations:} A permutation can be decomposed into product of two cycles. It's even or odd depending on number of two cycles present. (Imagine the ball hiding guy arranging the glasses. He achieves all sort of permutation by doing exchanges again and again). Odd and even because matrix representation corresponds to elementary operations which have determinants $1$ or $-1$.\\
 
-\noindent\textbf{Cayley's Theorem:} Any finite group $G$ with $n$ elements is isomorphic to a subgroup of $S_n$ (Permutation Group). (Associate each $g_i$ with corresponding permutation by checking the permutation offered by observing the permutation table.)\\
+\noindent\textbf{Cayley's Theorem:} Any finite group $G$ with $n$ elements is isomorphic to a subgroup of $S_n$ (Permutation Group). (Associate each $g_i$ with corresponding permutation by checking the permutation offered by observing the multiplication table.)\\
 
-\noindent\textbf{Conjugation:} Two elements $g$ and $g'$ are similar if there exists an element $f$ such that $f^{-1}gf = g'$. Conjugation is an equivalence relation, therefore we can form equivalence classes. (Doing something, doing main thing, undoing something leads to a similar element in some sense. Which is what defines this relation). Equivalence classes provide disjoint partitions of the set (Simple proof). Equivalence relations provide a zoom out lens of a given set\\
+\noindent\textbf{Conjugation:} Two elements $g$ and $g'$ are similar if there exists an element $f$ such that $f^{-1}gf = g'$. Conjugation is an equivalence relation, therefore we can form equivalence classes. (Doing something, doing main thing, undoing something leads to a similar element in some sense. Which is what defines this relation). Equivalence classes provide disjoint partitions of the set (Simple proof). Equivalence relations provide a zoom out lens of a given set.\\
 
 \noindent\textbf{Invariant Subgroup:} Say $H$ is a group. Conjugate $H$ with some $g$ not in $H$. It will give another group. Conjugation will lend to similar elements but not same. If the conjugated group is same as the original group \textbf{for all g}. Then that group is special, and rightly deserves the name Invariant subgroup. All elements equivalent to elements in the subgroup $H$ are also in $H$.\\
 
@@ -549,7 +549,50 @@ $$\chi^{(r)}(g) = Tr(D^{(r)}(g))$$
 
 \subsection{Equivalent represntation} 
 
-As mentioned, there may be more than one representation of a given group. Clearly, We are only concerned with reducible representations. Even among the reducible representations, given a representation $D(g)$, we can construct another representation $D'(g) = S^{-1} D(g) S$ (check that $D'$ is really a presentation). These representations are esentially the same connected by similarity transformation. If we are given two represenations, are they same? One thing you can check is that the character is invariant under the representations connected by similarity transformation.
+There may be more than one representation of a given group. Clearly, We are only concerned with reducible representations. Even among the reducible representations, given a representation $D(g)$, we can construct another representation $D'(g) = S^{-1} D(g) S$ (check that $D'$ is really a presentation). These representations are esentially the same connected by similarity transformation. If we are given two represenations, are they same? One thing you can check is that the character is invariant under the representations connected by similarity transformation. Therefore, if each matrix was conjugated (similarly transformed) and we were to be presented with weird looking set of matrices as representation, they may just be realted to some simple looking set of matrices via similarity transformation.
+
+\chapter{Theory of Lie}
+
+All functions considered are smooth etc. $x$ without subscript inside the function is to be seen as something which involves all $x_i$. Imagine a flat space and cartesian coordinates of dimension $n$. Now consider, a set of transformations (Called point transformation)
+
+$$x'_i = f_i(x_1, x_2, x_3, ...) \quad \forall i \in {1,2,..n}$$
+
+\noindent We can imagine $x$ moving to $x'$ in the same system or a region in the domain of $x$ system being mapped to a correesponding region of $x'$ system.\\
+
+\noindent We wish to see this transformation as a continous group. What do we need? We want it to be invertible. Which demands usual condition of Jacobian being non-zero under the region of consideration. Further, if we were to transform twice using different parameters, we should end up in the same family. Let's introduce a notation for finite parameter continuous group to make this more clear. \\
+
+\noindent A continuous transformation involving finite parameters will be represented as $x' = f(x;a)$. For this family to form a group, we demand that $x'' = f(x'; b) = f(x;c)$. Now if we have a $r$ parameter transformation 
+
+$$x'_i = f_i(x_1,x_2,...; a_1,a_2,...,a_r)$$
+
+\noindent We can eliminate the constants to form a set of differential equations for $x'_i$. This differential equations will have an amazing property. Namely, if we find two different set of families of solution $x'_i = g_i(x;b_1,b_2,...,b_r)$ and $x'_i = h_i(x;a)$. Then the composition $y'_i = g_i(h_1(x,a), h_2(x,a),...;b_1,b_2,...,b_r)$ is also a solution by definition of the group property of initial equation.\\
+
+\noindent A function $f$ in $x$ system may look very different in $x'$ system. If it looks the same, we say that the trasformation which takes $x$ to $x'$ is a symmetry of $f$. The magic in theory of continuous groups is that we can always analyze upto the first order near identity, namely, we are dealing with generators only. An explicit example is considered below.
+
+\section{Killing vectors}
+
+Consider finding out symmetries of the metric in relativity. We consider an infinitesimal transformation at all coordinates
+
+$${x'}\indices{^\mu} = x\indices{^\mu} + \epsilon \, \eta\indices{^\mu}(x)$$
+
+\noindent Here, $\eta\indices{^\mu}(x)$ is like $dx\indices{^\mu}$, hence it can be treated as vector. Namely, its indices can be lowered and uppered. Note also, that the inverse transformation can be given by (since first order change inside the function $\eta$ will give second order overall change)
+
+
+$$x\indices{^\mu} = {x'}\indices{^\mu} - \epsilon \, \eta\indices{^\mu}(x')$$
+
+\noindent The metric transforms under general coordinate transformation as 
+
+$${g'}\indices{_\alpha_ \beta}(x') = g\indices{_\mu _\nu}(x)\frac{\partial x\indices{^\mu}}{\partial {x'}\indices{^\alpha}} \frac{\partial x\indices{^\nu}}{\partial {x'}\indices{^\beta}}$$
+
+\noindent We want the metric to keep the same form under such coordinate transformation, meaning that we want ${g'}\indices{_\alpha_ \beta}(x') = g\indices{_\alpha_ \beta}(x')$. This connects the $x$ system and $x'$ system in a sense. Equation says that the point $x$(system 1) in the manifold which is also the point $x'$(system 2) in different system is related to the point $x'$(system 1) of the original system in this fashion. 
+
+$$g\indices{_\alpha_ \beta}(x) + \epsilon \, \partial_\sigma g\indices{_\alpha_ \beta} \, \eta\indices{^\sigma}(x)= g\indices{_\mu_ \nu}(x) \left[\delta\indices{^\mu_\alpha} -\epsilon \, \partial_\alpha\eta\indices{^\mu}\right] \left[\delta\indices{^\nu_ \beta} -\epsilon \, \partial_ \beta\eta\indices{^\nu}\right]  $$
+
+\noindent Here, we have ignored $\epsilon^2$ terms arising from partial derivatives of $\eta$ evaluated at infinitesimally different point. Which will give us a coordinate independent equation for vector $\eta\indices{^\mu}$
+
+$$\nabla\indices{_\mu}\eta\indices{_\nu} + \nabla\indices{_\nu}\eta\indices{_\mu} = 0 $$
+
+\noindent The vector field $\eta$ is then the generator of the continuous symmetry of the metric.
 
 \chapter{Quantum Mechanics}
 
@@ -583,7 +626,7 @@ As mentioned, there may be more than one representation of a given group. Clearl
 
 
 \chapter{General Relativity}
-No better summary than Dirac's 60 page book.
+No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ can be treated as a vector direction if one imagines $y^n$ to be accompanied with it. Also explains how it changes if surface is not flat or the coordinates are curved.
 
 \begin{itemize}
   \item An observer is a worldine where the basis vector he chooses at each point of the worldline reduces the metric to $\eta\indices{_a_b}$. In effect, he's someone who uses flat metric at all points of the worldline. (Schuller Lect 13. 41:26)
