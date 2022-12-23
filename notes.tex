@@ -601,9 +601,11 @@ $$\nabla\indices{_\mu}\eta\indices{_\nu} + \nabla\indices{_\nu}\eta\indices{_\mu
 
 \subsection{A brief note on invariance}
 
-There's a deep but trivial connection between the coordinate transformation that preserve the form of the function and the symmetry of the function. This very connection is the reason for noether's theorem. As stressed many times, Transformation we will consider are infinitesimal (Finite can be generated easily from them).\\
+There's a deep but trivial connection between the coordinate transformation that preserve the form of the function and the symmetry of the function. As stressed many times, Transformation we will consider are infinitesimal (Finite can be generated easily from them).\\
 
-\noindent Say we have a new coordinate system $x' = x + \epsilon \, \eta(x)$. Any function $f(x)$ will have a totally different form $f'(x')$. Here, $x$ and $x'$ refer to the same point on the manifold, but in different coordinate systems. Hence, the numerical value of two expression is same $f'(x') = f(x)$. However, if we want the form of the function itself to be the same in new coordinate system, we need $f'(x') = f(x')$. But if the transformation $x'=x'(x)$ is such that $f(x') = f(x)$ then we clearly have $f'(x') = f(x')$. Such transformation for which $f(x') = f(x)$ correspond to the infinitesimal symmetry of the function. Therefore, transformation which are the symmetry of the function are also the same transformation which preserve the form of the function under coordinate transformation. It's trivial, but took me long to realise.
+\noindent Say we have a new coordinate system $x' = x + \epsilon \, \eta(x)$. Any function $f(x)$ will have a totally different form $f'(x')$. Here, $x$ and $x'$ refer to the same point on the manifold, but in different coordinate systems. Hence, the numerical value of two expression is same $f'(x') = f(x)$. However, if we want the form of the function itself to be the same in new coordinate system, we need $f'(x') = f(x')$. But if the transformation $x'=x'(x)$ is such that $f(x') = f(x)$ then we clearly have $f'(x') = f(x')$. Such transformation for which $f(x') = f(x)$ are called infinitesimal symmetry of the function. Therefore, the infinitesimal transformations which doesn't change the value of the function are the corresponding coordinate transformations which preserve the form of the function under coordinate transformations. It's trivial, but took me long to realise.
+
+\noindent In Noether's theorem, think of coordinate tranformations as active transformations (meaning that we bring the field backwards, instead of moving the coordinates forward. So both, coordinate and field transformations correspond to the field transformation effectively. The reason I want you to think in terms of active transformation is because I don't want you to get confused with the definition of Scalars (Especially the notation). In our notation, $f'(x') = f(x)$ is always true where $'$ denotes $f$ in new coordinates. Notation $'$ is  used to describe the new (varied) field in many books (which doesn't mean the same field in different coordinates).
 
 \chapter{Quantum Mechanics}
 
@@ -630,7 +632,7 @@ There's a deep but trivial connection between the coordinate transformation that
 
   Check $U^\dag U = I$
 
-\item Matrix representation of the operator $X$ changes in different bases by a similarity transformation $X' = U^\dag XU$, where $X, U, X'$ are now seen as matrices, not operators. 
+\item Matrix representation of the same operator in different orthogonal basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. As seen in group theory, character(trace) is invariant under representations connected by Similarity transformations.
 
 
 \end{itemize}
