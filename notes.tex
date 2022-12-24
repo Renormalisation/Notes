@@ -6,6 +6,7 @@
 \usepackage{physics}
 \usepackage{tensor}
 \usepackage{hyperref}
+\usepackage{amsmath}
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
@@ -61,7 +62,10 @@
 
 \subsection{Taylor series}
 A function which can be differentiated arbitary number of times can always be expanded as \\\
-$$f(b) = f(a) + (b-a)f'(a) + \frac{(b-a)^2}{2!}f''(a) + \dots + \frac{(b-a)^n}{n!}f^{(n)}(a) + R_n$$
+
+\begin{equation}
+f(b) = f(a) + (b-a)f'(a) + \frac{(b-a)^2}{2!}f''(a) + \dots + \frac{(b-a)^n}{n!}f^{(n)}(a) + R_n
+\end{equation}
 The remainder term can be beautifully calculated using rolle's theorem as 
 
 $$R_n = \frac{(b-a)^{n+1}}{(n+1)!} f^{(n+1)}(\xi)$$
@@ -222,15 +226,16 @@ There's only one power series for a given funcion (Coefficients are obviously un
 
   \item As an example $|z|^2$ is differentiable at $z=0$ but not analytic anywhere.
 
-  \item The corresponding real functions of analytic function are harmonic and the conjugate functions form an orthogonal family. Moving along one would give maximum change in the other. The mapping is conformal at point when $f'(z) \neq 0$ or $f'(z) \neq \infty$.
+  \item The corresponding real functions of analytic function are harmonic and the conjugate functions form an orthogonal family. Moving along one would give maximum change in the other. The mapping is conformal at points when $f'(z) \neq 0$ or $f'(z) \neq \infty$.
 
 \end{itemize}
 
 \section{Cauchy's Theorem and Integral Formula} If $f(z)$ is analytic in a simply connected region and $C$ is a closed contour in that region then
 
-$$\oint_{C}f(z)dz = 0$$
-
-$$\frac{1}{2\pi i}\oint_{C}\frac{f(z)}{z-z_0}dz = f(z_0)$$
+\begin{gather}
+\oint_{C}f(z)dz = 0\\
+\frac{1}{2\pi i}\oint_{C}\frac{f(z)}{z-z_0}dz = f(z_0)
+\end{gather}
 
 \begin{enumerate}
   \item Taylor and laurent series are simple consequence of this.
@@ -559,7 +564,7 @@ $$x'_i = f_i(x_1, x_2, x_3, ...) \quad \forall i \in {1,2,..n}$$
 
 \noindent We can imagine $x$ moving to $x'$ in the same system or a region in the domain of $x$ system being mapped to a correesponding region of $x'$ system.\\
 
-\noindent We wish to see this transformation as a continous group. What do we need? We want it to be invertible. Which demands usual condition of Jacobian being non-zero under the region of consideration. Further, if we were to transform twice using different parameters, we should end up in the same family. Let's introduce a notation for finite parameter continuous group to make this more clear. \\
+\noindent We wish to see this transformation as a continous group. What do we need? We want it to be invertible. Which demands usual condition of Jacobian being non-zero under the region of consideration (Chapter 1 final theorem). Further, if we were to transform twice using different parameters, we should end up in the same family. Let's introduce a notation for finite parameter continuous group to make this more clear. \\
 
 \noindent A continuous transformation involving finite parameters will be represented as $x' = f(x;a)$. For this family to form a group, we demand that $x'' = f(x'; b) = f(x;c)$. Now if we have a $r$ parameter transformation 
 
@@ -573,7 +578,27 @@ $$x'_i = f_i(x_1,x_2,...; a_1,a_2,...,a_r)$$
 
 $$ P\left(x,\frac{\partial u}{\partial x}, \frac{\partial ^2 u}{\partial x^2},...\right) = P\left(y,\frac{\partial v}{\partial y}, \frac{\partial ^2 v}{\partial y^2},...\right)$$
 
+\section{Infinitesimal Transformation and Vector field generating the Transformation}
 
+Consider the $n$ parameter transformation, let's think of infinitesimal increment $\epsilon$ of the parameterk $k$, all the rest of parameters are chosen such that it corresponds to identity transformation.
+
+\begin{align}
+x'_i = f_i(x;e_1,...,e_k+\epsilon,...,e_n)
+= x_i + \frac{\partial f_i}{\partial a_k} (x;e)\epsilon + ... \quad(i = 1...n)
+\end{align}
+
+\noindent If we introduce the vector field
+
+$$X\indices{^e_k} = \sum_{i=1}^{n} \frac{\partial f_i}{\partial a_k}(x;e) \frac{\partial}{\partial x_i} := \sum_{i=1}^{n}\xi_{ki}(x)\frac{\partial}{\partial x_i}$$
+
+\noindent We have $x'_i = x_i + \epsilon \xi_{ki} + ... \quad (i=1...n)$\\
+
+\noindent More generally, arbitary increments from identity to all parameters $(e_1 + \epsilon\lambda_1,...,e_k+\epsilon\lambda_k,...e_r+\epsilon\lambda_r)$ will give
+
+\begin{gather}
+x' = x + \epsilon X +...\\
+X := \lambda_1 X_1^e + \lambda_1 X_2^e+...
+\end{gather}
 \section{Killing vectors}
 
 Consider finding out symmetries of the metric in relativity. We consider an infinitesimal transformation at all coordinates
@@ -595,7 +620,9 @@ $$g\indices{_\alpha_ \beta}(x) + \epsilon \, \partial_\sigma g\indices{_\alpha_ 
 
 \noindent Here, we have ignored $\epsilon^2$ terms arising from partial derivatives of $\eta$ evaluated at infinitesimally different point. Which will give us a coordinate independent equation for vector $\eta\indices{^\mu}$
 
-$$\nabla\indices{_\mu}\eta\indices{_\nu} + \nabla\indices{_\nu}\eta\indices{_\mu} = 0 $$
+\begin{equation}
+\nabla\indices{_\mu}\eta\indices{_\nu} + \nabla\indices{_\nu}\eta\indices{_\mu} = 0 
+\end{equation}
 
 \noindent The vector field $\eta$ is then the generator of the continuous symmetry of the metric.
 
@@ -603,9 +630,9 @@ $$\nabla\indices{_\mu}\eta\indices{_\nu} + \nabla\indices{_\nu}\eta\indices{_\mu
 
 There's a deep but trivial connection between the coordinate transformation that preserve the form of the function and the symmetry of the function. As stressed many times, Transformation we will consider are infinitesimal (Finite can be generated easily from them).\\
 
-\noindent Say we have a new coordinate system $x' = x + \epsilon \, \eta(x)$. Any function $f(x)$ will have a totally different form $f'(x')$. Here, $x$ and $x'$ refer to the same point on the manifold, but in different coordinate systems. Hence, the numerical value of two expression is same $f'(x') = f(x)$. However, if we want the form of the function itself to be the same in new coordinate system, we need $f'(x') = f(x')$. But if the transformation $x'=x'(x)$ is such that $f(x') = f(x)$ then we clearly have $f'(x') = f(x')$. Such transformation for which $f(x') = f(x)$ are called infinitesimal symmetry of the function. Therefore, the infinitesimal transformations which doesn't change the value of the function are the corresponding coordinate transformations which preserve the form of the function under coordinate transformations. It's trivial, but took me long to realise.
+\noindent Say we have a new coordinate system $x' = x + \epsilon \, \eta(x)$. Any function $f(x)$ will have a totally different form $f'(x')$. Here, $x$ and $x'$ refer to the same point on the manifold, but in different coordinate systems. Hence, the numerical value of two expression is same $f'(x') = f(x)$. However, if we want the form of the function itself to be the same in new coordinate system, we need $f'(x') = f(x')$. But if the transformation $x'=x'(x)$ is such that $f(x') = f(x)$ then we clearly have $f'(x') = f(x')$. Such transformation for which $f(x') = f(x)$ are called infinitesimal symmetry of the function. Therefore, the infinitesimal transformations which doesn't change the value of the function are the corresponding coordinate transformations which preserve the form of the function under coordinate transformations. It's trivial, but took me long to realise.\\
 
-\noindent In Noether's theorem, think of coordinate tranformations as active transformations (meaning that we bring the field backwards, instead of moving the coordinates forward. So both, coordinate and field transformations correspond to the field transformation effectively. The reason I want you to think in terms of active transformation is because I don't want you to get confused with the definition of Scalars (Especially the notation). In our notation, $f'(x') = f(x)$ is always true where $'$ denotes $f$ in new coordinates. Notation $'$ is  used to describe the new (varied) field in many books (which doesn't mean the same field in different coordinates).
+\noindent In Noether's theorem, think of coordinate tranformations as active transformations (meaning that we bring the field backwards, instead of moving the coordinates forward. So both, coordinate and field transformations correspond to the field transformation effectively. The reason I want you to think in terms of active transformation is because I don't want you to get confused with the definition of Scalars (Especially the notation). In our notation, $f'(x') = f(x)$ is always true where $'$ denotes $f$ in new coordinates. Notation $'$ is  used to describe the new (varied) field in many books. Varied field is a different scalar field altogether, in this notation $'$ is not describing the same field in new coordinates but the different field in same coordinates.
 
 \chapter{Quantum Mechanics}
 
@@ -618,13 +645,13 @@ There's a deep but trivial connection between the coordinate transformation that
   \item Inner product is positive definite and has conjugate symmetry by defintion. Important for probabilistic interpreation :
     $$\bra{\alpha}\ket{\beta} = \bra{\beta}\ket{\alpha}^* \quad \textrm{and} \quad \bra{\alpha}\ket{\alpha} \ge 0$$ 
 
-  \item The eigenvalues of a Hermitian operator ar ereal and Eigenkets corresponding to different eigenvalues are orthogonal. Every observable corresponds to a Hermitian operator. Converse, I am not aware of yet. \\
+  \item The eigenvalues of a Hermitian operator are real and Eigenkets corresponding to different eigenvalues are orthogonal. Every observable corresponds to a Hermitian operator. Converse, I am not aware of yet. \\
 
   \textbf{Postulate:} The eigenkets of an observable are complete. This is a physical requirement, not a mathematical truth. As a consequence, we start by identifying the observables, and since they're hermitian, we choose an orthonormal basis consisting of eigenkets of this observable, which will span the entire hilbert space.
 
-\item If $[A,B] = 0$, we they've same, every eigenvector of $A$ is an eigenvector of $B$.
+\item If $[A,B] = 0$, every eigenvector of $A$ is an eigenvector of $B$ and vice versa.
 
-\item Given two sets of base kets ${\ket{a^{(i)}}}$ and ${\ket{b^{(i)}}}$, there is a unitary operator
+\item Given two sets of orthonormal base kets ${\ket{a^{(i)}}}$ and ${\ket{b^{(i)}}}$, there is a unitary operator
 
   $$U = \sum_{k} \ket{b^{(k)}}\bra{a^{(k)}}$$
 
@@ -634,9 +661,20 @@ There's a deep but trivial connection between the coordinate transformation that
 
 \item Matrix representation of the same operator in different orthogonal basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. As seen in group theory, character(trace) is invariant under representations connected by Similarity transformations.
 
-
 \end{itemize}
 
+\section{Difference between direct sum(product) and tensor product}
+
+\noindent Direct sum of two vector spaces $A$ and $B$ is such that $(a,b)\, \textrm{with} \, a\in A, b\in B$ and $(ca, b)$ is considered diferent from $(a,cb)$ (Imagine $\mathbb{R}\bigoplus\mathbb{R} = \mathbb{R}^2$, both are different vectors in $\mathbb{R}^2$). We don't need to explain anything, they act as independent vector spaces and it's simple. For Direct Product, we need to restrict the structure by defining properties for the product. The dimension of Direct Sum of vector spaces add, they multiply in case of tensor product.\\
+
+\noindent Fundamental property defining tensor product of vectors is following (which is not true for direct sum(product))
+
+\begin{gather}
+  (\alpha v) \otimes w = \alpha (v \otimes w) = v \otimes (\alpha w)\notag \\
+  (v_1+v_2)\otimes w = v_1\otimes w + v_2\otimes w 
+\end{gather}
+
+\noindent If $V$ has basis $(e_1,e_2,..)$ and $W$ has basis $(f_1,f_2,...)$ then $(e_i\otimes f_j)$ is basis for $V\bigotimes W$. Tensor produt of oprtators is defined in the natural way. 
 
 \chapter{General Relativity}
 No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ can be treated as a vector direction if one imagines $y^n$ to be accompanied with it. Also explains how it changes if surface is not flat or the coordinates are curved.
