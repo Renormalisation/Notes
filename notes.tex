@@ -659,7 +659,7 @@ There's a deep but trivial connection between the coordinate transformation that
 
   Check $U^\dag U = I$
 
-\item Matrix representation of the same operator in different orthogonal basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. As seen in group theory, character(trace) is invariant under representations connected by Similarity transformations.
+\item Matrix representation of the same operator in different orthogonal basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. As seen in group theory, character(trace) is invariant under representations connected by Similarity transformations. Trace is a property of the operator, not of the basis (Although we are only talking about orthonormal basis here, I am not sure about general basis yet).
 
 \end{itemize}
 
@@ -674,7 +674,39 @@ There's a deep but trivial connection between the coordinate transformation that
   (v_1+v_2)\otimes w = v_1\otimes w + v_2\otimes w 
 \end{gather}
 
-\noindent If $V$ has basis $(e_1,e_2,..)$ and $W$ has basis $(f_1,f_2,...)$ then $(e_i\otimes f_j)$ is basis for $V\bigotimes W$. Tensor produt of oprtators is defined in the natural way. 
+\noindent If $V$ has basis $(e_1,e_2,..)$ and $W$ has basis $(f_1,f_2,...)$ then $(e_i\otimes f_j)$ is basis for $V\bigotimes W$. Tensor produt of oprtators is defined in the natural way. \\
+
+\noindent Inner product is also defined most naturally.
+
+$$\braket{\sum_{ij}a_{ij}v_i\otimes w_j}{\sum_{pq}b_{pq}v_p\otimes w_q} = \sum_{ij}\sum_{pq}a^{*}_{ij}b_{pq}\braket{v_i}{v_p}_V\braket{w_j}{w_q}_W$$
+
+\section{Quantum Teleportation}
+
+We note that the pauli matrices are both hermitian unitary, and can be realized physically as hamiltonians by setting up appropriate magnetic field. We cannot have a unitary operator which clones the state (No cloning theorem). 
+
+
+\includegraphics[width=11cm, height=7cm]{./Images/Teleportation.png}\\
+
+\noindent Say Alice wants to teleport the state $(\alpha\ket{+}_C+\beta\ket{-}_C)$. We use an auxiliary entangled state (we use ${\ket{\Phi_i}}$ to denote the bell basis)
+
+$$\ket{\Phi_0} = \frac{1}{\sqrt{2}}(\ket{+}_A \ket{+}_B + \ket{-}_A\ket{-}_B)$$
+
+\noindent The total state $\ket{\Psi}_{T} = \ket{\Phi_0}_{AB}\otimes (\alpha\ket{+}_C+\beta\ket{-}_C)$ is (by trivial algebra)
+
+\begin{align}
+  \ket{\Psi_T} &= \frac{1}{2}\ket{\Phi_0}_{AC}(\alpha\ket{+}_B + \beta\ket{-}_{B})\\
+                                   & + \frac{1}{2}\ket{\Phi_1}_{AC}(\beta\ket{+}_B + \alpha\ket{-}_{B})\nonumber\\
+                                   & + \frac{1}{2}\ket{\Phi_2}_{AC}(i\alpha\ket{-}_B + i\beta\ket{+}_{B})\nonumber\\
+                                   & + \frac{1}{2}\ket{\Phi_3}_{AC}(\alpha\ket{+}_B - \beta\ket{-}_{B})\nonumber
+\end{align}
+
+\noindent If Alice measures first basis state (he makes measurement on the bell state). He sends this information to bob classically. Corresponding to each bell state that Alice measures, Bob can set up appropriate magnetic field to get the original state.
+
+\Section{Angular Momentum}
+
+Momentum is the generator of translation in space, Hamiltonian is the generator of translation in time, Angular momentum is the generator of rotations.
+
+Tranlsations in different directions commute, therefore $[p_i,p_j] = 0$. Rotation in different directions don't commute, so we have a different algebra for their generators. This algebra defines everything.
 
 \chapter{General Relativity}
 No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ can be treated as a vector direction if one imagines $y^n$ to be accompanied with it. Also explains how it changes if surface is not flat or the coordinates are curved.
