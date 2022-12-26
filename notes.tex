@@ -704,11 +704,26 @@ $$\ket{\Phi_0} = \frac{1}{\sqrt{2}}(\ket{+}_A \ket{+}_B + \ket{-}_A\ket{-}_B)$$
 
 \noindent If Alice measures first basis state (he makes measurement on the bell state). He sends this information to bob classically. Corresponding to each bell state that Alice measures, Bob can set up appropriate magnetic field to get the original state.
 
+\section{Baker-Hausdorff Lemma}
+
+In Heisenberg picture, the operators (and therefore, their eigenkets) evolve with time. The state ket remains what it was at $t=0$. In schrodinger picture, the operators are what they are, the state ket evolves according to the hamiltonian. Now, how do we evaluate the operator after finite time $t$ in Heisenberg picture?
+
+$$A(t) = exp\left(\frac{iHt}{\hbar}\right)A(0)\,exp\left(\frac{-iHt}{\hbar}\right)$$
+
+Prove the following :
+
+\begin{align}
+  exp(iG\lambda)\,A\,exp&(-iG\lambda) = A + i\lambda[G,A] + \left(\frac{i^2\lambda^2}{2!}\right)[G,[G,A]]\\
+                    & +...+\left(\frac{i^n\lambda^n}{n!}\right)[G,[G,[G,...[G,A]]]...]+...\nonumber
+\end{align}
+
+\noindent Since we have an algbra, every commutator will be some combination of the elements of the algebra. Therefore, we only need to know commutators of the algebra for finite transformations (elements of the actual group). This is just theory of lie.
+
 \section{Angular Momentum}
 
-Momentum is the generator of translation in space, Hamiltonian is the generator of translation in time, Angular momentum is the generator of rotations.
+Momentum is the generator of translation in space, Hamiltonian is the generator of translation in time, Angular momentum is the generator of rotations.\\
 
-Tranlsations in different directions commute, therefore $[p_i,p_j] = 0$. Rotation in different directions don't commute, so we have a different algebra for their generators. This algebra defines everything.
+\noindent Tranlsations in different directions commute, therefore $[p_i,p_j] = 0$ (please derive). Rotation in different directions don't commute, so we have a different algebra for their generators. This algebra defines everything.
 
 \chapter{General Relativity}
 No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ can be treated as a vector direction if one imagines $y^n$ to be accompanied with it. Also explains how it changes if surface is not flat or the coordinates are curved.
@@ -741,5 +756,11 @@ No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ ca
     \end{enumerate}
 \end{itemize}
 
+\chapter{Gibberish that can be made precise}
+
+\begin{itemize}
+  \item In theories with torsion, the translations don't commute. What's the effect on the commutator of momenum in different directions.
+
+\end{itemize}
 
 \end{document}
