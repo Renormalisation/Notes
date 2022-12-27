@@ -1,4 +1,5 @@
 \documentclass{report}
+\usepackage{bbold}
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \graphicspath{./Images/}
@@ -199,24 +200,6 @@ There's only one power series for a given funcion (Coefficients are obviously un
     \end{enumerate}
 
   \item On the boundary of region of convergence, there is atleast one singularity.
-
-  \item Laurent Series and Analytic function.
-
-  \item Using residue calculus to sum the series.
-
-\end{itemize}
-
-\chapter{Integration}
-
-\begin{itemize}
-
-  \item Any upper sum will be greater than any lower sum. Infinite integrals (in integrands and in limits) are defined by taking appropriate limits. If function is discontinuous at only finitely many points, both limits approach to the same value, which is defined as the integral
-
-  \item Differentiating under the integral sign. Uniform convergence in $\alpha$ is required for infinite limits.
-
-  \item Integrating under the integral sign is rarely appreciated. Nice trick.
-
-  \item Green's and Stokes theorem (easy proof).
 
 \end{itemize}
 
@@ -532,13 +515,13 @@ $$R^{T}R = I \quad det(R) = 1$$
 
 \subsection{Lie Algebra}
 
-Instead of looking at the actual elements of the group, we are now concerned with generators only. We can go back to the actual group using exponention. For instance, $SO(n)$ generators are antisymmetric matrices. A general antisymmetric matrix can be seen as linear combination of $\frac{n(n-1)}{2}$ antisymmetric matrices. \\
+Instead of looking at the actual elements of the group, we are now concerned with generators only. We can go back to the actual group using exponention. For instance, $SO(n)$ generators are antisymmetric matrices. A general antisymmetric matrix can be seen as linear combination of $\frac{n(n-1)}{2}$ antisymmetric matrices. Now you know why lorentz group is $6$ parameters group. It is a weird kind of rotation in $4$ dimenstion.\\
 
-\noindent The commutativeness of the original group elements is related to the commutation relation of the generator. Commutation relation of the generators form an algebra which is called lie algebra of the cooresponding lie group.
+\noindent The structure of the group is determined by the commutation relation of the generator. Commutation relation of the generators form an algebra which is called lie algebra of the cooresponding lie group.
 
 $$[J_i, J_j] = i\epsilon\indices{_i_j_k}J_k$$
 
-\noindent We can do something like this for all sorts of lie groups. Where $\epsilon$ are repaced by some other constants known as the structure cosntatnts.
+\noindent We can do something like this for all sorts of lie groups. Where $\epsilon$ are replaced by some other constants known as the structure cosntatnts.
 
 \section{Representation Theory}
 
@@ -601,7 +584,16 @@ $$X\indices{^e_k} = \sum_{i=1}^{n} \frac{\partial f_i}{\partial a_k}(x;e) \frac{
 x' = x + \epsilon X +...\\
 X := \lambda_1 X_1^e + \lambda_1 X_2^e+...
 \end{gather}
-\section{Killing vectors}
+
+\section{A brief note on invariance}
+
+There's a deep but trivial connection between the coordinate transformation that preserve the form of the function and the symmetry of the function. As stressed many times, Transformation we will consider are infinitesimal (Finite can be generated easily from them).\\
+
+\noindent Say we have a new coordinate system $x' = x + \epsilon \, \eta(x)$. Any function $f(x)$ will have a totally different form $f'(x')$. Here, $x$ and $x'$ refer to the same point on the manifold, but in different coordinate systems. Hence, the numerical value of two expression is same $f'(x') = f(x)$. However, if we want the form of the function itself to be the same in new coordinate system, we need $f'(x') = f(x')$. But if the transformation $x'=x'(x)$ is such that $f(x') = f(x)$ then we clearly have $f'(x') = f(x')$. Such transformation for which $f(x') = f(x)$ are called infinitesimal symmetry of the function. Therefore, the infinitesimal transformations which doesn't change the value of the function are the corresponding coordinate transformations which preserve the form of the function under coordinate transformations. It's trivial, but took me long to realise.\\
+
+\noindent In Noether's theorem, think of coordinate tranformations as active transformations (meaning that we bring the field backwards, instead of moving the coordinates forward. So both, coordinate and field transformations correspond to the field transformation effectively. The reason I want you to think in terms of active transformation is because I don't want you to get confused with the definition of Scalars (Especially the notation). In our notation, $f'(x') = f(x)$ is always true where $'$ denotes $f$ in new coordinates. Notation $'$ is  used to describe the new (varied) field in many books. Varied field is a different scalar field altogether, in this notation $'$ is not describing the same field in new coordinates but the different field in same coordinates.
+
+\subsection{Killing vectors}
 
 Consider finding out symmetries of the metric in relativity. We consider an infinitesimal transformation at all coordinates
 
@@ -628,13 +620,21 @@ $$g\indices{_\alpha_ \beta}(x) + \epsilon \, \partial_\sigma g\indices{_\alpha_ 
 
 \noindent The vector field $\eta$ is then the generator of the continuous symmetry of the metric.
 
-\subsection{A brief note on invariance}
 
-There's a deep but trivial connection between the coordinate transformation that preserve the form of the function and the symmetry of the function. As stressed many times, Transformation we will consider are infinitesimal (Finite can be generated easily from them).\\
+\chapter{Classical Mechanics}
 
-\noindent Say we have a new coordinate system $x' = x + \epsilon \, \eta(x)$. Any function $f(x)$ will have a totally different form $f'(x')$. Here, $x$ and $x'$ refer to the same point on the manifold, but in different coordinate systems. Hence, the numerical value of two expression is same $f'(x') = f(x)$. However, if we want the form of the function itself to be the same in new coordinate system, we need $f'(x') = f(x')$. But if the transformation $x'=x'(x)$ is such that $f(x') = f(x)$ then we clearly have $f'(x') = f(x')$. Such transformation for which $f(x') = f(x)$ are called infinitesimal symmetry of the function. Therefore, the infinitesimal transformations which doesn't change the value of the function are the corresponding coordinate transformations which preserve the form of the function under coordinate transformations. It's trivial, but took me long to realise.\\
+\section{Lagrange Multipliers}
 
-\noindent In Noether's theorem, think of coordinate tranformations as active transformations (meaning that we bring the field backwards, instead of moving the coordinates forward. So both, coordinate and field transformations correspond to the field transformation effectively. The reason I want you to think in terms of active transformation is because I don't want you to get confused with the definition of Scalars (Especially the notation). In our notation, $f'(x') = f(x)$ is always true where $'$ denotes $f$ in new coordinates. Notation $'$ is  used to describe the new (varied) field in many books. Varied field is a different scalar field altogether, in this notation $'$ is not describing the same field in new coordinates but the different field in same coordinates.
+How would you find the max/min of a function $f(x,y)$? We get two equations by setting both partial derivatives equal to zero. We can simply solve for $x$ and $y$. Now if there's a constraint of the form $g(x,y)=c$, it may happen that the solution $(x_0,y_0)$ doesn't lie on $g$. What can we do? We introduce additional parameter $\lambda$ to adjust itself so as to make $x$ and $y$ fit on $g$. We find max/min for $f'(x,y)=f(x,y)+\lambda g(x,y)$, this maximum will depend on the parameter $\lambda$. We can then impose $g(x,y)=c$ to solve for $x,y,\lambda$. \\
+
+\noindent Geometric intuition for lagrange multipliers is that the change in $f$ is maximum along the gradient of $f$. If, along the curve $g$, there's a point where gradient of $f$ is parallel to gradient of $g$, then moving along $g$ will give min/max change in $f$ at that point (it's like $f$ has min/max at that point as seen by $g$, the contour lines just touch).\\
+
+\noindent Consider the action 
+
+$$S = \int L(q,\dot{q},t) dt$$
+
+\noindent If we have $n$ constraint realtion of the form $\sum_{k}a_{ik} dq_k = 0$, we can introduce $n$ additional parameters $\lambda_i$ and add all these terms in the variation of orginal $\delta L$.
+
 
 \chapter{Quantum Mechanics}
 
@@ -724,6 +724,43 @@ Prove the following :
 Momentum is the generator of translation in space, Hamiltonian is the generator of translation in time, Angular momentum is the generator of rotations.\\
 
 \noindent Tranlsations in different directions commute, therefore $[p_i,p_j] = 0$ (please derive). Rotation in different directions don't commute, so we have a different algebra for their generators. This algebra defines everything.
+
+\subsection{Operator Vector Analysis}
+
+\noindent If $\vec{a} \, \mathrm{and} \, \vec{b}$ are vector operators,  we have
+
+\begin{align}
+&\vec{a}\cdot\vec{b} = a_ib_i \quad \mathrm{(definition)}\\
+&\vec{a}\cdot\vec{b} = \vec{b}\cdot\vec{a} + [a_i,b_i]\\
+&\vec{a}\times\vec{b} = -\vec{b}\times\vec{a} + \epsilon_{ijk}[a_j,b_k]
+\end{align}
+
+\noindent Of course, not any pair of operators can be considered vector. An operator $V$ is a vector operator if its expectation values transform as real vectors under rotation (Turn it into mathematical definition (Sakurai p.246)). We simply state the definition\\
+
+$$[L_i, U_j]  = i\hbar\epsilon_{ijk}U_k$$
+
+\noindent We can show that if $\vec{u}$ and $\vec{v}$ are vector operators under rotation, $\vec{u}\cdot\vec{v}$ is a scalar(commutator with $L_i$ is zero) and $\vec{u}\times\vec{v}$ is a vector. For practice, show that $\vec{r}\, \mathrm{and}\, \vec{p}$ are vector under rotation.
+
+\section{Addition of Angular Momentum}
+
+If $J^{(1)}$ is angular momentum in space $V_1$ and $J_2$ is angular momentum in space $V_2$ then $J = J^{(1)}\bigotimes\mathbb{1} + \mathbb{1}\bigotimes J^{(2)}$ is angular momentum in space $V_1\bigotimes V_2$ (Check algebra).
+
+\subsection{Spin Orbit Coupling}
+
+(Check out thomas precession. It's beautiful) Consider hydrogen atom. Since electron has intrinsic spin, due to the motion of proton around electron, there will be a magnetic field which changes the energy by $\Delta H = \vec{\mu}\cdot \vec{B}$. $\vec{B}$ turns out to be proportional to $\vec{L}$.\\
+
+\noindent The new hamiltonian $H_{TOT} = H_0 + \Delta H$ contains an additional $\vec{L}\cdot\vec{S}$ term.\\
+
+\begin{align}
+&\vec{J}^2 = J_iJ_i = \vec{L}^2\otimes\mathbb{1} + \mathbb{1}\otimes \vec{S}^2 + 2 \sum_{i}L_i\otimes S_i\nonumber\\
+&\vec{L}\cdot\vec{S} = \frac{1}{2}(J^2 - L^2 - S^2)
+\end{align}
+
+\noindent Due to this, the CSCO is no longer $(H_0,L^2,S^2, L_z, S_z)$ but $(H_{TOT},L^2, S^2,J^2,J_z)$.
+
+\noindent For example, consider the subspace having angular momentum $1$ and spin $1/2$. This is a tensor product of two spaces having the dimension $3\times2=6$. It breaks into the direct sum of two vector spaces with total angular momentum $3/2$ or $1/2$.
+
+$$1\otimes\frac{1}{2} = \frac{3}{2} \oplus \frac{1}{2}$$
 
 \chapter{General Relativity}
 No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ can be treated as a vector direction if one imagines $y^n$ to be accompanied with it. Also explains how it changes if surface is not flat or the coordinates are curved.
