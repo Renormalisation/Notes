@@ -661,7 +661,13 @@ $$S = \int L(q,\dot{q},t) dt$$
 
   Check $U^\dag U = I$
 
-\item Matrix representation of the same operator in different orthogonal basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. As seen in group theory, character(trace) is invariant under representations connected by Similarity transformations. Trace is a property of the operator, not of the basis (Although we are only talking about orthonormal basis here, I am not sure about general basis yet).
+\item Matrix representation of the same operator in different basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. If both basis are orthonormal, the matrix $U$ is unitary. Trace is a property of the operator, not of the basis (Although we are only talking about transformations connecting orthonormal basis here, it's true for general transformation because of the cyclic property of trace).\\
+
+\item Similarity transformation are much more general. As we know, all finite vector spaces of a given dimension are isomorphic to each other. Similarity transformation connects two matrices $A$ and $B$ by an invertible matrix $P$(change of basis matrix) such that $B = P^{-1}AP$. In general linear group $GL(n,\mathbb{C})$, this is same as conjugation that we discussed in group theory. Character is same for an entire equivalence class means that trace is same for all matrices connected by similarity transformation. In linear algebra language, they represent same operator in different basis.\\
+
+\item There is a minor contextual linguistic difficulty here. When seen purely as a group $GL(n)$, the matrices connected by similarity transformation form an equivalence class. When this group is seen to be acting on an abstract vector space, all the elements of equivalence class represent the same operator(acting on this abstract vector space) in different basis. We can naturally ask, is there a relation between operators connected by unitary transformation (Note that it is different from the representation of same operator in different basis). There is a theorem which says that operators connected by similarity transformation are physically the same (Sakurai pp. 39).\\
+
+\item In summary, it is useful to associate the matrix representation to elements of $GL(n)$, which I call pure matrices. Think of operators as abstract quantities then, which are represented by an entire equivalence class of $GL(n)$.
 
 \end{itemize}
 
