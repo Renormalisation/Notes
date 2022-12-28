@@ -638,7 +638,16 @@ $$S = \int L(q,\dot{q},t) dt$$
 \section{General remarks}
 
 \begin{itemize}
-  \item We cannot directly substitute the constants of motion into the lagrangian and then use euler lagrange equations for other coordinates. Because, the euler-lagrange equations were derived based on the assumption that the coordinates $q_i$ are independent. (David Tong Ch2, p.29)
+  \item If $q_k$ does not appear in the lagrangian, we have conserved quantity(constant of motion) corresponding to it. However, We cannot directly substitute this conserved quantity back into the lagrangian and then use euler lagrange equations for other coordinates. Because, (firstly, the form of new lagrangian is clearly different from original, so there's no believe it would work anyway) the euler-lagrange equations were derived based on the assumption that the coordinates $q_i$'s are independent(David Tong Ch2, p.29). In that sense, even though $q_k$ is a ignorable in lagrangian formalism, it cannot really be ignored when we wish to derive equation of motions. In Hamiltonian formalism, if $q_k$ is ignorable, then it is truly ignorable in the sense that $p_k$ can be substituted for a constant in the hamiltonian, and problem becomes $n-1$ dimensional one.
+
+\begin{align}
+&L = L(q_1,q_2,...q_{n-1};\dot{q1},...,\dot{q_n};t)\\
+&H = H(q_1,q_2,...q_{n-1}; p_1,...,p_{n-1};\alpha;t)
+\end{align}
+
+The motion of $n$th coordinate can simply be given by 
+
+$$\dot{q_n} = \frac{\partial H}{\partial\alpha}$$
 
   \item A beautiful geometric interpretation of noether theorem can be found on Wikipedia. In summary, if the action doesn't change under some transformation, since first order changes around equation of motion doesn't change action, a 'slanting term' would be conserved.
 \end{itemize}
@@ -664,6 +673,10 @@ $$\eta(t) = \sum_{a}\boldsymbol{\mu_a}\left[A_ae^{\lambda_a t} + B_ae^{-\lambda_
 \noindent The system will be stable only if all eigenvalues are negative. Further, the special vectors $\boldsymbol{\mu_a}$ that have arisen out of beautiful combination of linear algebra and differential equation are called normal modes of the system. The most general solution has the form
 
 $$\boldsymbol{\eta} = \sum_{a,\lambda_a^2>0}\boldsymbol{\mu_a}\left[ A_ae^{\lambda_a t} + B_ae^{-\lambda_a t}\right] + \sum_{a,\lambda_a^2<0}\boldsymbol{\mu_a}A_a cos(\omega_a(t-t_a))$$
+
+\section{A comparision of Hamiltonian and Lagrangian Formalism}
+
+We have $n$ second order equations in lagrangian formalism. Unfortunately, the lagrangian is considered to be a function of $2n$ coordinates, where last $n$ coordinates are NOT REALLY on an independent footing from first $n$ coordinates. By legendre transformation, we arrive at a formalism where we can have $2n$ truly independent coordinates and the equation of motion becomes $2n$ coupled first order. It can be shown that euler-lagrange equation do not change their form under point transformation. The analogy of point transformations in hamiltonian formalism are cannonical transformations. In hamiltonian formalism, we have $2n$ independent coordiates which can all be transformed, unlinke only $n$ coordinates in the lagrangian formalism.
 
 \chapter{Quantum Mechanics}
 
