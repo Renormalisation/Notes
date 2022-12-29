@@ -34,6 +34,14 @@
 
 \tableofcontents
 
+
+\chapter{Feel of the scale : Read twice everyday}
+
+I always disliked remembering numerical values. I was satisfied with the qualitative nature of things. Fortunately, I found a very old book (Newtonian Mechanics by AP French) which made me realise the kind of grave mistake I was doing. If you don't wish to read him, the summary is : A physicist must know the rough scale of things.\\
+
+\includegraphics[width= 12cm, height=10cm]{./Images/Scales.png}
+
+
 \chapter{Magic of Infinitesimals}
 \section{Continuity}
 \subsection{Any mid value}
@@ -551,6 +559,10 @@ $$\chi^{(r)}(g) = Tr(D^{(r)}(g))$$
 
 There may be more than one representation of a given group. Clearly, We are only concerned with reducible representations. Even among the reducible representations, given a representation $D(g)$, we can construct another representation $D'(g) = S^{-1} D(g) S$ (check that $D'$ is really a presentation). These representations are esentially the same connected by similarity transformation. If we are given two represenations, are they same? One thing you can check is that the character is invariant under the representations connected by similarity transformation. Therefore, if each matrix was conjugated (similarly transformed) and we were to be presented with weird looking set of matrices as representation, they may just be realted to some simple looking set of matrices via similarity transformation.
 
+\subsection{Irreducible or Reducible}
+
+The dimension of them matrix is said to be the dimension of repersentation. You can make any dimensional representation just by direct summing $1$ dimensional trivial representation. (Note that the direct sum of two operators acts independently on the vectors from the direct summed vector spaces, in matrix language, it will be a block diagonal matrix and the vector will be an extended row). Although, by similarity transformation in higher dimension, we could make this block diagonal matrices uglier, and it will be messy to see if the representation is irreducible. In any case, ideally we say that the representation is irreducible if its dimnsion cannot be suppressed further. Goal is to figure out the number of irreducible representations.
+
 \chapter{Theory of Lie}
 
 All functions considered are smooth etc. $x$ without subscript inside the function is to be seen as something which involves all $x_i$. Imagine a flat space and cartesian coordinates of dimension $n$. Now consider, a set of transformations (Called point transformation)
@@ -707,9 +719,9 @@ $$\boldsymbol{\dot{y}} = \mathbb{J}J\mathbb{J}^T\frac{\partial H}{\partial \bold
 
 $$\mathbb{J}J\mathbb{J}^T = J$$
 
-\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system(connected by cannonical transformation) you like. Don't they give you a feeling of dot product? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\
+\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system(connected by cannonical transformation) you like. Don't they give you a feeling of dot product (quadratic form so to speak)? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\
 
-\noindent Now, Lie's theory is everywhere. Until now, we thought of cannonical transformation as such coordinate transformations which preserve the form of the hamilton's equation. Just like how lorentz invariant metric preserves the form of equations. Infinitestimal cannonical transformation can also be thought of as active (acting on the same coordinate system). They take $(q,p)$ to a different point $(q_i+\epsilon E_i, p_i+\epsilon F_i)$. For this transformation to be cannonical, we can show that it has to be in the form $(q_i+\epsilon\frac{\partial G}{\partial p_i}, p_i-\epsilon\frac{\partial G}{\partial q_i})$. $G$ is called the generating function. For example, if $G = p_k$, $q_i \rightarrow q_i+\epsilon\delta_{ik}$ and $p_i\rightarrow p_i$. We say that momentum is a generator of translation.
+\noindent Now, Lie's theory is everywhere. Until now, we thought of cannonical transformation as such coordinate transformations which preserve the form of the hamilton's equation. Just like how lorentz invariant metric preserves the form of equations. Infinitestimal cannonical transformation can also be thought of as active (acting on the same coordinate system). They take $(q_i,p_i)$ to a different point $(q_i+\epsilon E_i, p_i+\epsilon F_i)$. For this transformation to be cannonical, we can show that it has to be in the form $(q_i+\epsilon\frac{\partial G}{\partial p_i}, p_i-\epsilon\frac{\partial G}{\partial q_i})$. $G(q,p)$ is called the generating function. For example, if $G = p_k$, $q_i \rightarrow q_i+\epsilon\delta_{ik}$ and $p_i\rightarrow p_i$. We say that momentum is a generator of translation.
 
 
 \chapter{Quantum Mechanics}
@@ -737,7 +749,7 @@ $$\mathbb{J}J\mathbb{J}^T = J$$
 
   Check $U^\dag U = I$
 
-\item Matrix representation of the same operator in different basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. If both basis are orthonormal, the matrix $U$ is unitary. Trace is a property of the operator, not of the basis (Although we are only talking about transformations connecting orthonormal basis here, it's true for general transformation because of the cyclic property of trace).\\
+\item Matrix representation of the same operator in different basis are connected by similarity transformations $X' =U^{-1}XU$. LHS is the matrix of operator in new basis, RHS are matrices in old basis. If both basis are orthonormal, the matrix $U$ is unitary. Trace is a property of the operator, not of the basis (Although we are only talking about transformations connecting orthonormal basis here, it's true for general transformation because of the cyclic property of trace). \textbf{Every hermitian matrix is unitary diagonalizable.}\\
 
 \item Similarity transformation are much more general. As we know, all finite vector spaces of a given dimension are isomorphic to each other. Similarity transformation connects two matrices $A$ and $B$ by an invertible matrix $P$(change of basis matrix) such that $B = P^{-1}AP$. In general linear group $GL(n,\mathbb{C})$, this is same as conjugation that we discussed in group theory. Character is same for an entire equivalence class means that trace is same for all matrices connected by similarity transformation. In linear algebra language, they represent same operator in different basis.\\
 
@@ -848,6 +860,7 @@ $$1\otimes\frac{1}{2} = \frac{3}{2} \oplus \frac{1}{2}$$
 \chapter{General Relativity}
 No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ can be treated as a vector direction if one imagines $y^n$ to be accompanied with it. Also explains how it changes if surface is not flat or the coordinates are curved.
 
+
 \begin{itemize}
   \item An observer is a worldine where the basis vector he chooses at each point of the worldline reduces the metric to $\eta\indices{_a_b}$. In effect, he's someone who uses flat metric at all points of the worldline. (Schuller Lect 13. 41:26)
 
@@ -856,6 +869,18 @@ No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ ca
 
   \item In 2 dimesnions, gaussian curvature is sufficient to describe inner properties of the space. In higher dimensions, we need more.
 
+  \item Jacobi proved that any quadratic form can be put into the diagonal form by a change of basis.
+
+    $$\lambda_1\bar{x}_1^2 + \lambda_2\bar{x}_2^2+...+\lambda_n\bar{x}_n^2$$
+
+    Namely, if the quadratic form $q$ has matrix $A$ in a given basis then
+
+    \begin{align}
+      &q(v) = x^T A x\\
+      &A\rightarrow B = S^T A S \quad \mathrm{Basis\, change\, by\, S}
+    \end{align}
+
+    Then $B$ can be put into a diagonal form. This is reminiscent of the gaussian normal coordinates. Sylvester law of inertia states that the number of positive, negative and zero $\lambda$'s are a characteristic property of the quadratic form independent of the basis. In a manifold, we have vector spaces at each point. However, metric tensor $g$ is such that it's signature remains the same when carry this out at tangent space of any point.
 
     \begin{enumerate}
       \item Metric can be chosen at a point such that $g\indices{_\mu_\nu}(P) = \eta\indices{_\mu_\nu}$ and $\Gamma\indices{^\alpha_\beta_\gamma}(P) = 0$ (Poisson p.27)
