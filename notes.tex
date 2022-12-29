@@ -238,7 +238,17 @@ In real analysis, a function defined on a given range can be smoothly extended t
 
 \chapter{Differential Equations}
 
-I won't even mention ODE's with constant coefficients.
+\section{A notational devil}
+
+You have seen the notation 
+
+$$\frac{\partial f}{\partial y^i}  = \frac{\partial f}{\partial x^j}\frac{\partial x^j}{\partial y^i}$$
+
+\noindent Here, $f$ is a function which can have different form as expressed in $y$ coordinates. The notation $\frac{\partial f}{\partial y^i}$ really means that we are differentiating the function $f$ expressed in $y$ coordinates with respect to the $i^{\mathrm{th}}$ entry. In a more precise form it is seen as 
+
+$$\frac{\partial f}{\partial y^i} := \partial_i(f\circ y^{-1})$$
+
+\noindent I won't even mention ODE's with constant coefficients.
 \section{First Order ODE}
 
 \begin{itemize}
@@ -676,7 +686,31 @@ $$\boldsymbol{\eta} = \sum_{a,\lambda_a^2>0}\boldsymbol{\mu_a}\left[ A_ae^{\lamb
 
 \section{A comparision of Hamiltonian and Lagrangian Formalism}
 
-We have $n$ second order equations in lagrangian formalism. Unfortunately, the lagrangian is considered to be a function of $2n$ coordinates, where last $n$ coordinates are NOT REALLY on an independent footing from first $n$ coordinates. By legendre transformation, we arrive at a formalism where we can have $2n$ truly independent coordinates and the equation of motion becomes $2n$ coupled first order. It can be shown that euler-lagrange equation do not change their form under point transformation. The analogy of point transformations in hamiltonian formalism are cannonical transformations. In hamiltonian formalism, we have $2n$ independent coordiates which can all be transformed, unlinke only $n$ coordinates in the lagrangian formalism.
+We have $n$ second order equations in lagrangian formalism. Unfortunately, the lagrangian is considered to be a function of $2n$ coordinates, where last $n$ coordinates are NOT REALLY on an independent footing from first $n$ coordinates. By legendre transformation, we arrive at a formalism where we can have $2n$ truly independent coordinates and the equation of motion becomes $2n$ coupled first order. It can be shown that euler-lagrange equation do not change their form under point transformation. The analogy of point transformations in hamiltonian formalism are cannonical transformations. In hamiltonian formalism, we have $2n$ independent coordinates which can all be pointwise transformed, unlinke only $n$ coordinates in the lagrangian formalism. However, not all such transformation preserve the form of the equation. Those which do, are called cannonical transformations.
+
+\subsection{Cannonical Transformation}
+
+In phase space, we can associate a $2n$ dimensional vector $\boldsymbol{x}$ corresponding to the coordinates $(q_1,...,q_n,p_1,...,p_n)$. The hamilton's equation are then simply
+
+$$\boldsymbol{\dot{x}} = J\frac{\partial H}{\partial \boldsymbol{x}}$$
+
+\noindent where $ J = \begin{pmatrix}
+  0 & 1\\
+  -1 & 0
+\end{pmatrix}$
+
+\noindent Let's make a point transformation $x -> y(x)$ in phase space and check if the equation of motion have the same form.
+
+$$\boldsymbol{\dot{y}} = \mathbb{J}J\mathbb{J}^T\frac{\partial H}{\partial \boldsymbol{y}}$$
+
+\noindent Here $\mathbb{J}_{ij} = \frac{\partial y^i}{\partial x^j}$. To have the same form in $y$
+
+$$\mathbb{J}J\mathbb{J}^T = J$$
+
+\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system(connected by cannonical transformation) you like. Don't they give you a feeling of dot product? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\
+
+\noindent Now, Lie's theory is everywhere. Until now, we thought of cannonical transformation as such coordinate transformations which preserve the form of the hamilton's equation. Just like how lorentz invariant metric preserves the form of equations. Infinitestimal cannonical transformation can also be thought of as active (acting on the same coordinate system). They take $(q,p)$ to a different point $(q_i+\epsilon E_i, p_i+\epsilon F_i)$. For this transformation to be cannonical, we can show that it has to be in the form $(q_i+\epsilon\frac{\partial G}{\partial p_i}, p_i-\epsilon\frac{\partial G}{\partial q_i})$. $G$ is called the generating function. For example, if $G = p_k$, $q_i \rightarrow q_i+\epsilon\delta_{ik}$ and $p_i\rightarrow p_i$. We say that momentum is a generator of translation.
+
 
 \chapter{Quantum Mechanics}
 
