@@ -436,7 +436,7 @@ $$I(x) = \int_{-\infty}^{\infty}e^{-xt^2}dt - 2\int_{10}^{\infty}e^{-xt^2}dt$$
 
 $$I(x) \sim \sqrt{\frac{\pi}{x}}$$
 
-\noindent $\bold{Stirling's Approximation :}$
+\subsubsection{Stirling's Approximation :}
 
 $$\Gamma(x+1) = \int_{0}^{\infty}t^x e^{-t}dt$$
 
@@ -481,7 +481,7 @@ $$\mathrm{if}\quad f^{(i)}(c) = 0 \quad\forall i<n \quad \mathrm{then} \quad  I(
 
 \noindent A useful way to think about both the laplace and stationary phase method in a coherent manner is to see that the function multiplying $f(t)$ has an exponential order. Meaning they change much faster than $f(t)$ as long as $f(t)$ doesn't have exponential order. Note that complex representation of sin and cosine make this evident for this oscillatory functions as well. In some sense then, the integral is wholly dominated by this exponential ordered terms (including sine,cosine). Therefore we only care about the regions where this exponential ordered terms are slowly varying (given that they decay eventually in case of laplace method). In laplace method, it was the peak. In stationary phase method, it is the stationary phase.\\
 
-\noindent \textbf{Bessel function}\\
+\subsubsection{Bessel function}
 
 $$J_0(x) = \frac{1}{\pi}\int_{0}^{\infty}\cos(x\sin(t)) dt$$
 
@@ -495,6 +495,18 @@ $$\frac{1}{\pi}\int_{0}^{\pi}e^{ix\sin(t)}dt\sim \frac{1}{\pi}\int_{\frac{\pi}{2
 \noindent As done again and again, expanding the limits of integration because it only affects higher order terms, we get 
 
 $$J_0\left(x\right) \sim \sqrt{\frac{2}{\pi x}} \cos\left(x-\frac{\pi}{4}\right) \quad\mathrm{as}\quad x\to\infty$$
+
+\subsubsection{Group velocity}
+
+In quantum mechanics, we consider a superposition of waves.
+
+$$\Psi(x,t) = \int{\phi(k)e^{i(kx-\omega(k)t)}}dk$$
+
+\noindent What part gives the dominant contribution to the integral? The part where the phase is stationary. Giving us
+
+$$x = \frac{d\omega}{dk} t$$
+
+\noindent Hence, The part which gives dominant contribution to the overall integral moves with the velocity $\frac{d\omega}{dk}$.
 
 \subsection{Steepest Descent}
 This method makes previous two methods a consequence. Consider the integral 
@@ -719,7 +731,9 @@ $$\boldsymbol{\dot{y}} = \mathbb{J}J\mathbb{J}^T\frac{\partial H}{\partial \bold
 
 $$\mathbb{J}J\mathbb{J}^T = J$$
 
-\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system(connected by cannonical transformation) you like. Don't they give you a feeling of dot product (quadratic form so to speak)? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\
+\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system(connected by cannonical transformation) you like. Don't they give you a feeling of dot product (quadratic form so to speak)? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\.
+
+\noindent Converse is also true. That is, if transformations are such that they preserve the cannonical commutation relations $(\{Q_i,Q_j\}=0, \{Q_i,P_j\}=\delta_{ij})$, these transformations are cannonical.\\
 
 \noindent Now, Lie's theory is everywhere. Until now, we thought of cannonical transformation as such coordinate transformations which preserve the form of the hamilton's equation. Just like how lorentz invariant metric preserves the form of equations. Infinitestimal cannonical transformation can also be thought of as active (acting on the same coordinate system). They take $(q_i,p_i)$ to a different point $(q_i+\epsilon E_i, p_i+\epsilon F_i)$. For this transformation to be cannonical, we can show that it has to be in the form $(q_i+\epsilon\frac{\partial G}{\partial p_i}, p_i-\epsilon\frac{\partial G}{\partial q_i})$. $G(q,p)$ is called the generating function. For example, if $G = p_k$, $q_i \rightarrow q_i+\epsilon\delta_{ik}$ and $p_i\rightarrow p_i$. We say that momentum is a generator of translation.
 
