@@ -313,7 +313,7 @@ $$\mathcal{L}(x) = \frac{d}{dx}\left[p_0(x)\frac{d}{dx}\right]+p_2(x)$$
 
 \noindent We can show that
 
-$$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a}^{b} + \int_{a}^{b}(\mathcal{L}v)^* u dx$$
+$$\int_{a}^{b}v^*(x)\mathcal{L}u(x)\,dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a}^{b} + \int_{a}^{b}(\mathcal{L}v)^* u \,dx$$
 
 \begin{itemize}
   \item Dirichlet Boundary : $u$ and $v$ both vanish at endpoints.
@@ -323,9 +323,9 @@ $$\int_{a}^{b}v^*(x)\mathcal{L}u(x)dx = \left[v^* p_0 u' - (v^*)'p_0 u\right]_{a
 
 \noindent If $u$ and $v$ are eigenfunctions of $\mathcal{L}$ with respective eigenvalues $\lambda_u$ and $\lambda_v$, then we can see that they are orthogonal. \textbf{This is great beacause we have just proven orthogonality of Trigonometric, Bessel, Legendre, Hermite, Laguerre, Chebyshev. Further, completeness of eigenfunctions is the origin of fourier series!}\\
 
-\noindent Namely, if $f(x)$ satisfy boundary conditions of Sturm-Liouville and is continous and piecewise differentiable on $[a,b]$ then eignefunction expansion of $f$ converges uniformly to $f$ on $[a,b]$. If it's piecewise differentiable, then it converges to $[f(x_+) + f(x_-)]/2$ on $[a,b]$.
+\noindent Namely, if $f(x)$ satisfy boundary conditions of Sturm-Liouville and is continous and piecewise differentiable on $[a,b]$ then eignefunction expansion of $f$ converges uniformly to $f$ on $[a,b]$. If it's piecewise differentiable, then it converges to $[f(x_+) + f(x_-)]/2$ on $[a,b]$.\\
 
-\noindent To solve, inhomogenous strum lioville equation, we solve the eigenequation of the given operator with given boundary condition, which allows us to find the eigenfunction expansion of the inhomogenous equation.
+\noindent To solve, inhomogenous strum lioville equation, we solve the eigenequation of the given operator with given boundary condition, which allows us to find the eigenfunction expansion of the inhomogenous equation. There is a theorem which states that there will be a unique solution (modulo homegenous solution) for non-homogenous strum-liouville boundary problem for a given boundary equations.
 
 \subsection{Special Functions and Polynomials}
 
@@ -384,6 +384,18 @@ Any sequence of function, whose integral over all space is unity and it vanishes
 \begin{enumerate}
   \item $\delta(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty} e^{ikx} dk $
 \end{enumerate}
+
+\section{Green's Functions}
+
+Linear differential equations have the property of superposition. Let's solve for a $\delta$ function source. If we call the solution $G$, the problem with arbitary source can be reduced to quadrature (to solving integrals), if we know $G$.
+
+\begin{align}
+  &\hat{L}(x)G(x,x') = \delta(x-x')\\
+  &\hat{L}(x)u(x) = f(x)\\\nonumber
+  &u(x) = \int{f(x')G(x,x')}dx'
+\end{align}
+
+Here, $hat{L}$ is a linear operator.
 
 \chapter{Asymptotics and Perturbation Methods}
 
@@ -531,7 +543,7 @@ $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \noindent\textbf{Conjugation:} Two elements $g$ and $g'$ are similar if there exists an element $f$ such that $f^{-1}gf = g'$. Conjugation is an equivalence relation, therefore we can form equivalence classes. (Doing something, doing main thing, undoing something leads to a similar element in some sense. Which is what defines this relation). Equivalence classes provide disjoint partitions of the set (Simple proof). Equivalence relations provide a zoom out lens of a given set.\\
 
-\noindent\textbf{Invariant Subgroup:} Say $H$ is a group. Conjugate $H$ with some $g$ not in $H$. It will give another group. Conjugation will lend to similar elements but not same. If the conjugated group is same as the original group \textbf{for all g}. Then that group is special, and rightly deserves the name Invariant subgroup. All elements equivalent to elements in the subgroup $H$ are also in $H$.\\
+\noindent\textbf{Invariant Subgroup:} Say $H$ is a group. Conjugate $H$ with some $g$ not in $H$. It will give another group. Conjugation will lend to similar elements but not same. If the conjugated group is same as the original group \textbf{for all g}. Then that group is special, and rightly deserves the name Invariant subgroup. All elements equivalent to elements in the subgroup $H$ are also in $H$. It's a sort of an equivalence relation that preserves the group structure.\\
 
 \noindent\textbf{Quotient Group:} If $G$ has an invariant subgroup $H$, we can form another group consisting of left cosets $g_aH$ as elements called the Quotient group $G/H$. We can zoom out sets using equivalence relation, in the same way we need invariant subgroups to zoom out of the group if we want to preserve the group strucutre. It's a somewhat stronger condition than just using equivalence class to zoom out in order to keep group structure. \\
 
@@ -573,7 +585,7 @@ There may be more than one representation of a given group. Clearly, We are only
 
 \subsection{Irreducible or Reducible}
 
-The dimension of them matrix is said to be the dimension of repersentation. You can make any dimensional representation just by direct summing $1$ dimensional trivial representation. (Note that the direct sum of two operators acts independently on the vectors from the direct summed vector spaces, in matrix language, it will be a block diagonal matrix and the vector will be an extended row). Although, by similarity transformation in higher dimension, we could make this block diagonal matrices uglier, and it will be messy to see if the representation is irreducible. In any case, ideally we say that the representation is irreducible if its dimnsion cannot be suppressed further. Goal is to figure out the number of irreducible representations.
+The dimension of the matrix is said to be the dimension of repersentation. You can make any dimensional representation just by direct summing $1$ dimensional trivial representation. (Note that the direct sum of two operators acts independently on the vectors from the direct summed vector spaces, in matrix language, it will be a block diagonal matrix and the vector will be an extended row). Although, by similarity transformation in higher dimension, we could make this block diagonal matrices uglier, and it will be messy to see if the representation is irreducible. In any case, ideally we say that the representation is irreducible if its dimnsion cannot be suppressed further. Goal is to figure out the number of irreducible representations.
 
 \chapter{Theory of Lie}
 
@@ -723,7 +735,7 @@ $$\boldsymbol{\dot{x}} = J\frac{\partial H}{\partial \boldsymbol{x}}$$
   -1 & 0
 \end{pmatrix}$
 
-\noindent Let's make a point transformation $x -> y(x)$ in phase space and check if the equation of motion have the same form.
+\noindent Let's make a point transformation $x \rightarrow y(x)$ in phase space and check if the equation of motion have the same form.
 
 $$\boldsymbol{\dot{y}} = \mathbb{J}J\mathbb{J}^T\frac{\partial H}{\partial \boldsymbol{y}}$$
 
@@ -811,7 +823,7 @@ $$\ket{\Phi_0} = \frac{1}{\sqrt{2}}(\ket{+}_A \ket{+}_B + \ket{-}_A\ket{-}_B)$$
                                    & + \frac{1}{2}\ket{\Phi_3}_{AC}(\alpha\ket{+}_B - \beta\ket{-}_{B})\nonumber
 \end{align}
 
-\noindent If Alice measures first basis state (he makes measurement on the bell state). He sends this information to bob classically. Corresponding to each bell state that Alice measures, Bob can set up appropriate magnetic field to get the original state.
+\noindent Alice measures the bell state. She sends this information to bob classically. Corresponding to each bell state that Alice measures, Bob can set up appropriate magnetic field to get the original state.
 
 \section{Baker-Hausdorff Lemma}
 
@@ -894,7 +906,7 @@ No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ ca
       &A\rightarrow B = S^T A \,S \quad \mathrm{Basis\, change\, by\, S}
     \end{align}
 
-    Then $B$ can be put into a diagonal form. This is reminiscent of the gaussian normal coordinates. Sylvester law of inertia states that the number of positive, negative and zero $\lambda$'s are a characteristic property of the quadratic form independent of the basis. In a manifold, we have vector spaces at each point. However, metric tensor $g$ is such that it's signature remains the same when carry this out at tangent space of any point.
+    Then $B$ can be put into a diagonal form. This is reminiscent of the gaussian normal coordinates. Sylvester law of inertia states that the number of positive, negative and zero $\lambda$'s are a characteristic property of the quadratic form independent of the basis. In a manifold, we have vector spaces at each point. However, metric tensor $g$ is such that it's signature remains the same when carry this out at tangent space of any point. Note that since $A$ is symmetric, it can be unitary diagonalized. That's why $S^T$ can diagonalize it, we don't need inverse.
 
     \begin{enumerate}
       \item Metric can be chosen at a point such that $g\indices{_\mu_\nu}(P) = \eta\indices{_\mu_\nu}$ and $\Gamma\indices{^\alpha_\beta_\gamma}(P) = 0$ (Poisson p.27)
