@@ -397,6 +397,37 @@ Linear differential equations have the property of superposition. Let's solve fo
 
 Here, $hat{L}$ is a linear operator.
 
+\chapter{Algebra}
+
+\begin{itemize}
+  \item It is useful to think of two different vector spaces, one consisting of matrices and the other of operators. One consisting of row/column vectors and the other consisting of abstract vectors. The matrices and row/column are then just representation of these abstract stuff.
+  
+  \item Same operator is represented by different matrices in different basis. All this matrices are connected by Similarity transformation ($S^{-1}A\,S$). Since the properties of the operator are not dependent on the basis chosen, all these matrices will share these properties. Note again that these matrices are different stuff in the vector space consisting of matrices, but they are same in a sense since they describe the same abstract operator. Therefore, they have same determinant, trace and eigenvalues (as can be easily checked). They form an equivalence class in the vector space of matrices.
+
+  \item Inner product is an additional structure over vector space which has $3$ defining properties. 
+
+    \begin{enumerate}
+      \item Conjugate Symmerty : $<x,y> = \bar{<y,x>}$
+      \item Linearity in first argument : $<ax+by,z> = a<x,z>+b<y,z>$
+      \item $<x,x> > 0$
+    \end{enumerate}
+
+  \item An algbera is a vector space with product between the vectors. It is defined by $3$ additional properties
+    \begin{enumerate}
+      \item Right distributivity : $(x+y)z = xz + yz$
+      \item Left distributivity : $z(x+y) = zx + zy$
+      \item Scalar compatibility : $(ax)(by) = (ab)(xy)$
+    \end{enumerate}
+
+  \item Eigenvalues of Hermitian operator are real and eigenvectors with different eigenvalues are orthogonal. Eigenvectors are complete. (Similarly for symmetric operator).
+
+  \item Eigenvalue of $MM\dagger$ is  \textbf{positive}. Prove by inserting the identity operator!
+
+  \item Hermitian operators can always be diagonalized by a unitary matrix.
+
+  \item In differential geometry, we have vector space at each point (made up by differentials).
+\end{itemize}
+
 \chapter{Asymptotics and Perturbation Methods}
 
 $\lim_{x\to x_0} \frac{f(x)}{g(x)} = 1 := f(x) \sim g(x) \quad\mathrm{as}\quad  x\to x_0$\\
@@ -563,7 +594,7 @@ Instead of looking at the actual elements of the group, we are now concerned wit
 
 $$[J_i, J_j] = i\epsilon\indices{_i_j_k}J_k$$
 
-\noindent We can do something like this for all sorts of lie groups. Where $\epsilon$ are replaced by some other constants known as the structure cosntatnts.
+\noindent We can do something like this for all sorts of lie groups. Where $\epsilon$ are replaced by some other constants known as the structure cosntatnts.\\
 
 \section{Representation Theory}
 
@@ -666,7 +697,6 @@ $$g\indices{_\alpha_ \beta}(x) + \epsilon \, \partial_\sigma g\indices{_\alpha_ 
 
 \noindent The vector field $\eta$ is then the generator of the continuous symmetry of the metric.
 
-
 \chapter{Classical Mechanics}
 
 \section{Lagrange Multipliers}
@@ -743,7 +773,7 @@ $$\boldsymbol{\dot{y}} = \mathbb{J}J\mathbb{J}^T\frac{\partial H}{\partial \bold
 
 $$\mathbb{J}J\mathbb{J}^T = J$$
 
-\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system(connected by cannonical transformation) you like. Don't they give you a feeling of dot product (quadratic form so to speak)? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\.
+\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system (connected by cannonical transformation) you like. Don't they give you a feeling of dot product (quadratic form so to speak)? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\. The associated symmetry group (for cannonical transformation) is called symplectic group. (Check Classical Groups wyborne P.14).
 
 \noindent Converse is also true. That is, if transformations are such that they preserve the cannonical commutation relations $(\{Q_i,Q_j\}=0, \{Q_i,P_j\}=\delta_{ij})$, these transformations are cannonical.\\
 
