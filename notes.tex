@@ -701,6 +701,31 @@ $$g\indices{_\alpha_ \beta}(x) + \epsilon \, \partial_\sigma g\indices{_\alpha_ 
 
 \noindent The vector field $\eta$ is then the generator of the continuous symmetry of the metric.
 
+\section{Lie Algebra}
+
+It can be shown that the infinitesimal generators form the relation
+
+$$[X_ \rho, X_\sigma] = c\indices{^{\tau}_ \rho_\sigma}X_\tau$$
+
+\noindent With $c\indices{^\tau_ \rho_\sigma} = -c\indices{^\tau_ \sigma_ \rho}$. Further, they satisfy the Jacobi identity
+
+$$[X_ \rho,[X_\sigma,X_\nu]]+ [X_ \sigma,[X_\nu,X_ \rho]] + [X_ \nu,[X_ \rho,X_\sigma]] = 0 $$
+
+\noindent Such a vector space with product defined as above form Lie algebra. Note that we can also realize matrices to represent the same thing, but the generators are vectors in reality. Matrices are just represerntations. Formally, the lie algebra has following three prperties
+
+\begin{gather}
+  [\alpha X + \beta Y, Z] = \alpha[X,Z]+\beta[Y,Z]\\
+  [X,Y]+[Y,X] = 0\\
+  [X,[Y,Z]]+[Y,[Z,X]]+[Z,[X,Y]] = 0
+\end{gather}
+
+\noindent Under a transformation of basis (using matrix $a\indices{^\nu_ \rho}$), the structure constants change as 
+
+$${c'}\indices{^\tau _ \rho_\sigma} = a\indices{^\nu_ \rho}a\indices{^\lambda_ \sigma}c\indices{^\kappa _\nu_\lambda} (a\indices{^\kappa _\tau})^{-1}$$
+
+\noindent \textbf{Different Lie groups may have the same structure constants and as a result the same Lie algebra, but be radically different groups globally}. Groups possessing common lie algebra are said to be locally isomorpihc, that is, isomorphic in the neighbourhood of the identity. The Lie algebra $su(2)$ and $so(3)$ are isomorphic while the Lie groups $SU(2)$ and $SO(3)$ are only locally isomorphic. A radical example is $SO(2)$ and $T(1)$ have single selfcommuting generator but the groups are obviously not isomorphic globally.
+
+
 \chapter{Classical Mechanics}
 
 \section{Lagrange Multipliers}
