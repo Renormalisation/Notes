@@ -741,13 +741,49 @@ $$[X,Y]\in Z \quad \textrm{for\, any} \quad (X\in Z, Y \in A)$$
 
 $$[X_ \rho, X_ \sigma] = c\indices{^\tau_ \rho_\sigma}X_\tau \quad (\rho,\tau \in Z, \sigma\in A)$$
 
-\noindent If the algeba has members which are not in the ideal, the ideal is called proper ideal. Basically, it is not the whole agebra itself.\\
+\noindent If the algeba has members which are not in the ideal, the ideal is called proper ideal. Basically, it is not the whole agebra itself.\\ 
 
 \noindent We had a concept of abelian group. In close analogy, a subalgebra $Z$ is abelian if commutator $[X,Y]=0$ for any $(X,Y \in Z)$. Similarly, we had a concept of center (the set of elements which commute with all other elemnts of the group). In close analogy, the set of all elements $X_\sigma$ of algebra $A$ is said to form the maximal ideal or center of the algebra if $[X_ \rho, X_\sigma] = 0 \quad (\rho\in Z, \sigma\in A)$.\\
+
+\noindent Obviously, the ideal is a subalgebra itself. Even more so, it is a special type of subalgbera, it's an invariant subalgebra. We will see that lie algebras which have no non-trivial ideals are simplest in some sense. Those which can be seen as direct product of these are semisimple.\\
 
 \noindent Basically, we tried to see the product of vectors as some group theoretic multiplication and tried to identify corresponding things here.
 
 
+\subsection{Adjoint representation}
+
+\noindent We really have vectors and a product of vectors when we talk about algebras. However, we represent the the elements of the algebra (vectors) by matrices which follow the same commutation relation. Which we call a representation of the algebra. Just like we have a representation of group by matrices. Now, whenever we represent stuff by matrices, we should note that we're really talking about a linear operator in $GL(n,\mathbb{C})$. Which can be represented by a lot of matrices connected by similarity transformation. The closed lie algebra provides a cannonical such linear operator. Representation using this cannonical linear operator provided by the algebra is called adjoint representation. We need to show that this operator respects the commutator algebra.
+
+$$ad(X) : Z \rightarrow [X,Z] \quad \textrm{for\, any} \, (Z\in A)$$
+
+\begin{align}
+  [ad(Y),ad(Z)]K &= ad(Y)ad(Z)K - ad(Z)ad(Y)K\\
+                 &= ad(Y)[Z,K] - ad(Z)[Y,K]\\
+                 &= [Y,[Z,K]] - [Z,[Y,K]]\\
+                 &= ad([Y,Z])K
+\end{align}
+
+\noindent In this sense, we already have a faithful representation of the \textbf{simple} lie algebra. The main purpose is not to find faithful representation of the lie algebra, but to find all representations (upto equivalency(by similarity transformation) ofc).
+
+\subsection{Simple and Semisimple Lie Algebra}
+
+\noindent A lie algebra is simple if it has no proper ideals (rightly named). It's semisimple if it has no maximal (abelian) ideals. Alternate definition of semisimple lie algebra is if
+
+$$A = A_1 \oplus \dots \oplus A_N$$
+
+\noindent where each $A_i$(are ideals of $A$) form a simple lie algebra.\\
+
+\noindent Semi-simplicity is a widespread concept in linear-algebra, abstract algebra and representation theory. Semi-simple object is one which can be decomposed into direct sum of simple objects and simple objects are those which do not contain non-trivial proper(invariant) sub-objects.
+
+\section{Killing Form and Cartan's Criterion for Semi-Simple Lie Algebras}
+
+\noindent Using the structure constants of a lie group, we can define a symmetric tensor (ofc it will depend on the basis)
+
+$$g\indices{_ \sigma _\lambda} = g\indices{_\lambda _\sigma} = c\indices{^\tau _\sigma _ \rho}c\indices{^\rho_\lambda_\tau}$$
+
+\noindent\textbf{Theorem :} Lie algebra is semisimple if and only if $det|g\indices{_\sigma_\lambda}| \neq 0$
+
+\noindent Wow! Great! We just need to know the structure constants of a Lie algebra. From that, we need to find the determinant of killing form to check if the lie algebra is semisimple.
 
 \chapter{Classical Mechanics}
 
