@@ -713,7 +713,7 @@ $$[X_ \rho, X_\sigma] = c\indices{^{\tau}_ \rho_\sigma}X_\tau$$
 
 $$[X_ \rho,[X_\sigma,X_\nu]]+ [X_ \sigma,[X_\nu,X_ \rho]] + [X_ \nu,[X_ \rho,X_\sigma]] = 0 $$
 
-\noindent Such a vector space with product defined as above form Lie algebra. Note that we can also realize matrices to represent the same thing, but the generators are vectors in reality. Matrices are just represerntations. Formally, the lie algebra has following three prperties
+\noindent Such a vector space with product defined as above form Lie algebra (Tangent space at the identity element of the manifold). Note that we can also realize matrices to represent the same thing, but the generators are vectors in reality. Matrices are just represerntations. Formally, the lie algebra has following three prperties
 
 \begin{gather}
   [\alpha X + \beta Y, Z] = \alpha[X,Z]+\beta[Y,Z]\\
@@ -733,13 +733,21 @@ If a subspace $Z$ (as a vector subspace) of lie algebra $A$ is closed, it's a su
 
 $$[X,Y]\in Z \quad \textrm{for\, any} \quad (X,Y \in Z)$$
 
-\noindent A subset $Z$ is ideal(or invariant subalgebra) of $A$ if it is closed under product with another element in $A$.
+\noindent A subset $Z$ is ideal (or invariant subalgebra) of $A$ if it is closed under product with another element in $A$. This is analogous to the invariant subgroup which remains as it is under conjugation by any element.
 
 $$[X,Y]\in Z \quad \textrm{for\, any} \quad (X\in Z, Y \in A)$$
 
 \noindent that is,
 
 $$[X_ \rho, X_ \sigma] = c\indices{^\tau_ \rho_\sigma}X_\tau \quad (\rho,\tau \in Z, \sigma\in A)$$
+
+\noindent If the algeba has members which are not in the ideal, the ideal is called proper ideal. Basically, it is not the whole agebra itself.\\
+
+\noindent We had a concept of abelian group. In close analogy, a subalgebra $Z$ is abelian if commutator $[X,Y]=0$ for any $(X,Y \in Z)$. Similarly, we had a concept of center (the set of elements which commute with all other elemnts of the group). In close analogy, the set of all elements $X_\sigma$ of algebra $A$ is said to form the maximal ideal or center of the algebra if $[X_ \rho, X_\sigma] = 0 \quad (\rho\in Z, \sigma\in A)$.\\
+
+\noindent Basically, we tried to see the product of vectors as some group theoretic multiplication and tried to identify corresponding things here.
+
+
 
 \chapter{Classical Mechanics}
 
@@ -1006,7 +1014,7 @@ No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ ca
 \begin{itemize}
   \item In theories with torsion, the translations don't commute. What's the effect on the commutator of momenum in different directions.
 
-  \item A uniform interpretation of wavefunction amond all theories?
+  \item A uniform interpretation of wavefunction among all theories?
 
 \end{itemize}
 
