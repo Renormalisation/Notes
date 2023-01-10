@@ -428,6 +428,12 @@ Here, $hat{L}$ is a linear operator.
   \item In differential geometry, we have vector space at each point (made up by differentials).
 \end{itemize}
 
+\section{Invariant Subspace}
+
+The concept of invariance is widespread in mathematics. We know what is an invariant subgroup, invariant subalgebra. Similarly, for a given linear operator, the invariant subspace is defined. It is useful in characterizing reducible and irreducible representations.A representation is reducible if it contains a nontrivial invariant subspace. Note that the representation is just a linear operator. Invariant subspace $W$ of operator $T:V\rightarrow V$ is a subspace $W$ of $V$ that is preserved. That is $T(W)\subseteq W$. Given an invariant subspace $W$ of $T$, $V$ can be decomoposed into the direct sum $V = W \oplus W'$.\\
+
+\noindent Matrix representation of $T$ in an appropriately chosen basis (Most natural way ofc, the basis of invariant subspace and add the remaining) is upper triangular. Note that off diagonal terms of a matrix serve the role of mixing two subspaces. Now, when $V$ is broken into $W\oplus W'$, the top right off-diagonal term brings components of $W'$ subspace into $W$. There's no restriction there. But, the bottom left off-diagonal part brings components $W$ into $W'$, which cannot happen since $W$ is an invariant subspace of $T$.
+
 \chapter{Asymptotics and Perturbation Methods}
 
 $\lim_{x\to x_0} \frac{f(x)}{g(x)} = 1 := f(x) \sim g(x) \quad\mathrm{as}\quad  x\to x_0$\\
@@ -575,6 +581,8 @@ $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 \noindent\textbf{Conjugation:} Two elements $g$ and $g'$ are similar if there exists an element $f$ such that $f^{-1}gf = g'$. Conjugation is an equivalence relation, therefore we can form equivalence classes. (Doing something, doing main thing, undoing something leads to a similar element in some sense. Which is what defines this relation). Equivalence classes provide disjoint partitions of the set (Simple proof). Equivalence relations provide a zoom out lens of a given set.\\
 
 \noindent\textbf{Invariant Subgroup:} Say $H$ is a group. Conjugate $H$ with some $g$ not in $H$. It will give another group. Conjugation will lend to similar elements but not same. If the conjugated group is same as the original group \textbf{for all g}. Then that group is special, and rightly deserves the name Invariant subgroup. All elements equivalent to elements in the subgroup $H$ are also in $H$. It's a sort of an equivalence relation that preserves the group structure.\\
+
+\noindent The terminology ``Normal", ``Invariant", ``Ideal" are used analogously for all algebraic structures. Similarly, the term ``Simple" and ``Semi-Simple" are used analogously, namely algebraic structures having no non-trivial Invariant substructures.\\
 
 \noindent\textbf{Quotient Group:} If $G$ has an invariant subgroup $H$, we can form another group consisting of left cosets $g_aH$ as elements called the Quotient group $G/H$. We can zoom out sets using equivalence relation, in the same way we need invariant subgroups to zoom out of the group if we want to preserve the group strucutre. It's a somewhat stronger condition than just using equivalence class to zoom out in order to keep group structure. \\
 
