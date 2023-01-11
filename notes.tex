@@ -412,6 +412,8 @@ Here, $hat{L}$ is a linear operator.
       \item $<x,x> > 0$
     \end{enumerate}
 
+\noindent Without this structure, it's not possible to talk to about angles between vectors and norm of the vectors. Inner product is just a metric. Note however, that linear transformations are represented by matrices, just in the same way, inner products (metric) is represented by matrix (with elements $g(e_i,e_j))$. However, inner product and linear transformations are fundamentally different things. Linear transformations are operators which take a vector to another vector, that is $T:V\rightarrow V$ whereas metric (or inner product) is $g : V \cross V \rightarrow \mathbb{F}$. In a particular basis the inner product gives $\bar{x}^\intercal M x$, where $x$ is just a column vector containinig components. Firstly, $M$ can always be taken to be a symmetric (hermitian) matrix by the axioms of inner product. We know that under a different basis, this column vector will change like $Sx$ where $S$ is an invertible matrix. Since we want the value to remain same, we see that the representation of $M$ under change of basis changes like $S^\intercal M S$. For linear operator, the representation would change like $S^{-1}T\,S$. Note that any symmetric matrix can be diagonalized using an orthogonal (unitary) matrix. What really defines the inner product is than the number of positive, negative and zero numbers in the diagonal form. This is sylvester's law of inertia which reveals the fundamental form of metric. There can only be as many inner product in $n$ dimensional vector space as there are combinations of $(+,-,0)$. Note that because of different transformation properties of linear operator and of the metric, we cannot bring the linear operator in $(+1,-1,0)$ form but we can always bring the metric in $(+1,-1,0)$ form.
+
   \item An algbera is a vector space with product between the vectors. It is defined by $3$ additional properties
     \begin{enumerate}
       \item Right distributivity : $(x+y)z = xz + yz$
@@ -426,6 +428,7 @@ Here, $hat{L}$ is a linear operator.
   \item Hermitian operators can always be diagonalized by a unitary matrix.
 
   \item In differential geometry, we have vector space at each point (made up by differentials).
+
 \end{itemize}
 
 \section{Invariant Subspace}
@@ -762,7 +765,7 @@ $$[X_ \rho, X_ \sigma] = c\indices{^\tau_ \rho_\sigma}X_\tau \quad (\rho,\tau \i
 
 \subsection{Adjoint representation}
 
-\noindent We really have vectors and a product of vectors when we talk about algebras. However, we represent the the elements of the algebra (vectors) by matrices which follow the same commutation relation. Which we call a representation of the algebra. Just like we have a representation of group by matrices. Now, whenever we represent stuff by matrices, we should note that we're really talking about a linear operator in $GL(n,\mathbb{C})$. Which can be represented by a lot of matrices connected by similarity transformation. The closed lie algebra provides a cannonical such linear operator. Representation using this cannonical linear operator provided by the algebra is called adjoint representation. We need to show that this operator respects the commutator algebra.
+\noindent We really have vectors and a product of vectors when we talk about algebras. However, we represent elements of the algebra (vectors) by matrices which follow the same commutation relation. Which we call a representation of the algebra. Just like we have a representation of group by matrices. Now, whenever we represent stuff by matrices, we should note that we're really talking about a linear operator in $GL(n,\mathbb{C})$. Which can be represented by a lot of matrices connected by similarity transformation. The closed lie algebra provides a cannonical such linear operator (just like inner product provides a natural isomorphism between dual space). Representation using this cannonical linear operator provided by the algebra is called adjoint representation. We need to show that this operator respects the commutator algebra.
 
 $$ad(X) : Z \rightarrow [X,Z] \quad \textrm{for\, any} \, (Z\in A)$$
 
