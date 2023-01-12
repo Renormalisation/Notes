@@ -402,6 +402,8 @@ Here, $hat{L}$ is a linear operator.
 \begin{itemize}
   \item It is useful to think of two different vector spaces, one consisting of matrices and the other of operators. One consisting of row/column vectors and the other consisting of abstract vectors. The matrices and row/column are then just representation of these abstract stuff.
   
+  \item Check Dirac's quantum book for relation between minimal polynomial and the eigenvalues.
+
   \item Same operator is represented by different matrices in different basis. All this matrices are connected by Similarity transformation ($S^{-1}A\,S$). Since the properties of the operator are not dependent on the basis chosen, all these matrices will share these properties. Note again that these matrices are different stuff in the vector space consisting of matrices, but they are same in a sense since they describe the same abstract operator. Therefore, they have same determinant, trace and eigenvalues (as can be easily checked). They form an equivalence class in the vector space of matrices.
 
   \item Inner product is an additional structure over vector space which has $3$ defining properties. 
@@ -651,7 +653,7 @@ $$x'_i = f_i(x_1,x_2,...; a_1,a_2,...,a_r)$$
 
 \noindent We can eliminate the constants to form a set of differential equations for $x'_i$. This differential equations will have an amazing property. Namely, if we find two different set of families of solution $x'_i = g_i(x;b_1,b_2,...,b_r)$ and $x'_i = h_i(x;a)$. Then the composition $y'_i = g_i(h_1(x,a), h_2(x,a),...;b_1,b_2,...,b_r)$ is also a solution by definition of the group property of initial equation.\\
 
-\noindent A function $f$ in $x$ system may look very different in $x'$ system. If it looks the same, we say that the trasformation which takes $x$ to $x'$ is a symmetry of $f$. The magic in theory of continuous groups is that we can always analyze upto the first order near identity, namely, we are dealing with generators only. An explicit example is considered below (Section of Killing Vectors).\\
+\noindent A function $f$ in $x$ system may look very different in $x'$ system. If it looks the same, we say that the trasformation which takes $x$ to $x'$ is a symmetry of $f$. The magic in theory of continuous groups is that we can always analyze upto the first order near identity, namely, we are dealing with generators only. An explicit example is considered in the \hyperref[sec:killing]{(Section of Killing Vectors)}.\\
 
 \noindent More generally, let $x$ be transformed to $y$ and $u_i(x)$ be transformed to different functions under the group action, which in $y$ coordinates, have the form $v(y)$, then the function $P(x,\frac{\partial u}{\partial x}, \frac{\partial ^2 u}{\partial x^2},...)$ is an invariant of the group if 
 
@@ -687,9 +689,10 @@ There's a deep but trivial connection between the coordinate transformation that
 
 \noindent Say we have a new coordinate system $x' = x + \epsilon \, \eta(x)$. Any function $f(x)$ will have a totally different form $f'(x')$. Here, $x$ and $x'$ refer to the same point on the manifold, but in different coordinate systems. Hence, the numerical value of two expression is same $f'(x') = f(x)$. However, if we want the form of the function itself to be the same in new coordinate system, we need $f'(x') = f(x')$. But if the transformation $x'=x'(x)$ is such that $f(x') = f(x)$ then we clearly have $f'(x') = f(x')$. Such transformation for which $f(x') = f(x)$ are called infinitesimal symmetry of the function. Therefore, the infinitesimal transformations which doesn't change the value of the function are the corresponding coordinate transformations which preserve the form of the function under coordinate transformations. It's trivial, but took me long to realise.\\
 
-\noindent In Noether's theorem, think of coordinate tranformations as active transformations (meaning that we bring the field backwards, instead of moving the coordinates forward. So both, coordinate and field transformations correspond to the field transformation effectively. The reason I want you to think in terms of active transformation is because I don't want you to get confused with the definition of Scalars (Especially the notation). In our notation, $f'(x') = f(x)$ is always true where $'$ denotes $f$ in new coordinates. Notation $'$ is  used to describe the new (varied) field in many books. Varied field is a different scalar field altogether, in this notation $'$ is not describing the same field in new coordinates but the different field in same coordinates.
+\noindent In Noether's theorem, think of coordinate tranformations as active transformations (meaning that we bring the field backwards, instead of moving the coordinates forward. So both, coordinate and field transformations correspond to the field transformation effectively. The reason I want you to think in terms of active transformation is because I don't want you to get confused with the definition of Scalars (Especially the notation). In our notation, $f'(x') = f(x)$ is always true where $'$ denotes $f$ in new coordinates. In many books though, Notation $'$ is  used to describe the new (varied) field. Varied field is a different scalar field altogether, and in their notation $'$ is not describing the same field in new coordinates but the different field in same coordinates.
 
 \subsection{Killing vectors}
+\label{sec:killing}
 
 Consider finding out symmetries of the metric in relativity. We consider an infinitesimal transformation at all coordinates
 
@@ -726,7 +729,7 @@ $$[X_ \rho, X_\sigma] = c\indices{^{\tau}_ \rho_\sigma}X_\tau$$
 
 $$[X_ \rho,[X_\sigma,X_\nu]]+ [X_ \sigma,[X_\nu,X_ \rho]] + [X_ \nu,[X_ \rho,X_\sigma]] = 0 $$
 
-\noindent Such a vector space with product defined as above form Lie algebra (Tangent space at the identity element of the manifold). Note that we can also realize matrices to represent the same thing, but the generators are vectors in reality. Matrices are just represerntations. Formally, the lie algebra has following three prperties
+\noindent Such a vector space with product defined as above form Lie algebra (Tangent space at the identity element of the manifold). Note that we can also realize matrices to represent the same thing, but the generators are vectors in reality. Matrices are just represerntations. Formally, the lie algebra has following three properties
 
 \begin{gather}
   [\alpha X + \beta Y, Z] = \alpha[X,Z]+\beta[Y,Z]\\
