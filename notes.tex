@@ -854,7 +854,7 @@ $$\boldsymbol{\ddot{\eta}} = F \boldsymbol{\eta}$$
 
 $$\eta(t) = \sum_{a}\boldsymbol{\mu_a}\left[A_ae^{\lambda_a t} + B_ae^{-\lambda_a t}\right]$$
 
-\noindent The system will be stable only if all eigenvalues are negative. Further, the special vectors $\boldsymbol{\mu_a}$ that have arisen out of beautiful combination of linear algebra and differential equation are called normal modes of the system. The most general solution has the form
+\noindent The system will be stable only if all eigenvalues are negative (since the solution depends on the square root of eigenvalue which turns exponential into trigonometric functions). Further, the special vectors $\boldsymbol{\mu_a}$ that have arisen out of beautiful combination of linear algebra and differential equation are called normal modes of the system. The most general solution has the form
 
 $$\boldsymbol{\eta} = \sum_{a,\lambda_a^2>0}\boldsymbol{\mu_a}\left[ A_ae^{\lambda_a t} + B_ae^{-\lambda_a t}\right] + \sum_{a,\lambda_a^2<0}\boldsymbol{\mu_a}A_a cos(\omega_a(t-t_a))$$
 
@@ -881,11 +881,18 @@ $$\boldsymbol{\dot{y}} = \mathbb{J}J\mathbb{J}^T\frac{\partial H}{\partial \bold
 
 $$\mathbb{J}J\mathbb{J}^T = J$$
 
-\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system (connected by cannonical transformation) you like. Don't they give you a feeling of dot product (quadratic form so to speak)? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter)\\. The associated symmetry group (for cannonical transformation) is called symplectic group. (Check Classical Groups wyborne P.14).
+\noindent Transformations whose jacobian have these form are called canonical. Rings bell from group theory? Already thinking about generators and infinitesimal transformations? Further, we can show that poisson brackets remain invariant under cannonical transformation in a sense that you can calculate them in any particular coordinate system (connected by cannonical transformation) you like. Don't they give you a feeling of dot product (quadratic form so to speak)? It's kind of a scalar on some manifold? Like in general relativity $\partial_\mu\phi\partial^\mu\phi$ is a scalar. (Tong p.101 last chapter).\\ The associated symmetry group (for cannonical transformation) is called symplectic group. (Check Classical Groups wyborne P.14).
 
 \noindent Converse is also true. That is, if transformations are such that they preserve the cannonical commutation relations $(\{Q_i,Q_j\}=0, \{Q_i,P_j\}=\delta_{ij})$, these transformations are cannonical.\\
 
 \noindent Now, Lie's theory is everywhere. Until now, we thought of cannonical transformation as such coordinate transformations which preserve the form of the hamilton's equation. Just like how lorentz invariant metric preserves the form of equations. Infinitestimal cannonical transformation can also be thought of as active (acting on the same coordinate system). They take $(q_i,p_i)$ to a different point $(q_i+\epsilon E_i, p_i+\epsilon F_i)$. For this transformation to be cannonical, we can show that it has to be in the form $(q_i+\epsilon\frac{\partial G}{\partial p_i}, p_i-\epsilon\frac{\partial G}{\partial q_i})$. $G(q,p)$ is called the generating function. For example, if $G = p_k$, $q_i \rightarrow q_i+\epsilon\delta_{ik}$ and $p_i\rightarrow p_i$. We say that momentum is a generator of translation.
+
+\section{Constrained Hamiltonian Systems}
+
+If the hessian $ W_{ij} = \frac{\partial^2 L}{\partial \dot{q_i} \partial \dot{q_j}}$ is singular then we cannot express all $\dot{q_i}$ as functions of $q$ and $p$. If rank of $W$ is $n-m$ where $n$ is the number of coordinates. The legendre transformation maps us onto $2n-m$ dimensional subspace of the phase space. then we would have $m$ constraint realtions $\phi_a(q,p)=0$ restricting us onto $2n-m$ dimensional subspace of the phase space. As an example, think of the dissipative lagrangian (Do the stuff I described, if you wish, you can \href{https://www.youtube.com/watch?v=xj8QL3QIyfs}{check here})
+
+$$L = \frac{1}{2}\dot{q_i}^2 + c \dot{q_2}{q_1}-\frac{m}{2}(q_1^2 + q_2^2 + q_3^2 )$$
+
 
 
 \chapter{Quantum Mechanics}
@@ -1064,6 +1071,15 @@ No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ ca
 
     \end{enumerate}
 \end{itemize}
+
+\chapter{Quantum Field Theory}
+
+\noindent Think about how we can get from a classical theory of particles (Lagrangian or Hamiltonian) to a quantum theory? We simply introduce cannonical commutation relations between coordinates and conjugate momenta and make them operators on a hilbert space. Once we have the commutation relations, we know everything. We do the same thing for fields. 
+
+\noindent There are two distinct approaches. One is that we consider the classical field to be made up of infinite coordinates (Coefficients of strum-liouville complete eigenfunction expansions), then we introduce the commutation relation between all these infinite coordinates and their conjugate momenta. Although if lagrangian contains first order time derivatives, the system is constrained (refer to constrained hamiltonian systems) and therefore the quantization procedure has to be slightly modified.\\
+Another approach is to directly apply the commutation relations on continuosly labeled field and its conjugate momenta defined using the functional derivative.
+
+
 
 \chapter{Gibberish that can be made precise}
 
