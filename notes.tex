@@ -573,6 +573,14 @@ $$I(x) = \int_{C}h(t)\, e^{x\phi(t)}\, e^{ix\psi(t)}$$
 
 \noindent If we choose a contour such that the $\psi(t)$ is constant on this contour, we can bring it out of the integral and use laplace's method. This will enable us to find higher order terms that we missed in stationary phase method. Please check the video by Professor Strogatz for example.\\
 
+\section{Perturbation in QM}
+
+This subject is not fairly rigorous. We blindly assume a perturbative series for the new eigenfunction and new energies. Put them in schrodinger equation and solve for each order seperately to get the correct coefficients. One thing to note is that each order correction to wavefunction can be assumed to be perpendicular to zeroth order term. 
+
+\subsection{Degenerate Case}
+
+In case of degenracy, the formulas derived above blow up. The reason is that any linear combination of the states in degenerate subspace (which is an invariant subspace (Every eigenspace is an invariant subspace ofc) of the original hamiltonian) is a valid eigenfunction and we do not really know which guys to use in our formula for correction to energies. A beautiful result we can derive (by requiring consistency of the expansion) is that we need to use the basis which diagonalise the perturbation hamiltonian in the degenerate subspace. Now there's no direct need to diagonalize the perturbed hamiltonian, because if we can find a hermitian operator  that commutes with the perturbation then by the theorem of simultaneous diagonalisability, we have found diagonalization automatically.
+
 \chapter{Groups}
 
 \section{Finite Groups}
@@ -1077,8 +1085,7 @@ No better summary than Dirac's 60 page book. Roughly speaking, $\partial_\mu$ ca
 \noindent Think about how we can get from a classical theory of particles (Lagrangian or Hamiltonian) to a quantum theory? We simply introduce cannonical commutation relations between coordinates and conjugate momenta and make them operators on a hilbert space. Once we have the commutation relations, we know everything. We do the same thing for fields. 
 
 \noindent There are two distinct approaches. One is that we consider the classical field to be made up of infinite coordinates (Coefficients of strum-liouville complete eigenfunction expansions), then we introduce the commutation relation between all these infinite coordinates and their conjugate momenta. Although if lagrangian contains first order time derivatives, the system is constrained (refer to constrained hamiltonian systems) and therefore the quantization procedure has to be slightly modified.\\
-Another approach is to directly apply the commutation relations on continuosly labeled field and its conjugate momenta defined using the functional derivative.
-
+\noindent Another approach is to directly apply the commutation relations on continuosly labeled field and its conjugate momenta defined using the functional derivative. In this case, the fourier expansion gives continuouts coordinates (just like countably infinite coordinates in strum-liouville expansion, we have uncountably infinite coordinates in the fourier expansion)
 
 \chapter{Gibberish that can be made precise}
 
